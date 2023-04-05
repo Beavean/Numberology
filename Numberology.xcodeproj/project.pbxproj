@@ -11,6 +11,7 @@
 		08897A6D29DD941A0058A7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08897A6C29DD941A0058A7A0 /* ViewController.swift */; };
 		08897A7229DD941B0058A7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08897A7129DD941B0058A7A0 /* Assets.xcassets */; };
 		08897A7529DD941B0058A7A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08897A7329DD941B0058A7A0 /* LaunchScreen.storyboard */; };
+		08897A7F29DD9F630058A7A0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08897A7E29DD9F630058A7A0 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08897A7F29DD9F630058A7A0 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +78,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08897A7929DD941B0058A7A0 /* Build configuration list for PBXNativeTarget "Numberology" */;
 			buildPhases = (
+				08897A8129DD9FDD0058A7A0 /* SwiftFormat */,
+				08897A8029DD9F7A0058A7A0 /* SwiftLint */,
 				08897A6129DD941A0058A7A0 /* Sources */,
 				08897A6229DD941A0058A7A0 /* Frameworks */,
 				08897A6329DD941A0058A7A0 /* Resources */,
@@ -85,6 +89,9 @@
 			dependencies = (
 			);
 			name = Numberology;
+			packageProductDependencies = (
+				08897A7E29DD9F630058A7A0 /* SnapKit */,
+			);
 			productName = Numberology;
 			productReference = 08897A6529DD941A0058A7A0 /* Numberology.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +120,9 @@
 				Base,
 			);
 			mainGroup = 08897A5C29DD941A0058A7A0;
+			packageReferences = (
+				08897A7D29DD9F630058A7A0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 08897A6629DD941A0058A7A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,6 +143,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08897A8029DD9F7A0058A7A0 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat --exclude Pods \"${SRCROOT}\"\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+		08897A8129DD9FDD0058A7A0 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat --exclude Pods \"${SRCROOT}\"\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08897A6129DD941A0058A7A0 /* Sources */ = {
@@ -356,6 +407,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08897A7D29DD9F630058A7A0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08897A7E29DD9F630058A7A0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08897A7D29DD9F630058A7A0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08897A5D29DD941A0058A7A0 /* Project object */;
 }
