@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08897A6929DD941A0058A7A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08897A6829DD941A0058A7A0 /* AppDelegate.swift */; };
-		08897A6B29DD941A0058A7A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08897A6A29DD941A0058A7A0 /* SceneDelegate.swift */; };
 		08897A6D29DD941A0058A7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08897A6C29DD941A0058A7A0 /* ViewController.swift */; };
-		08897A7029DD941A0058A7A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08897A6E29DD941A0058A7A0 /* Main.storyboard */; };
 		08897A7229DD941B0058A7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08897A7129DD941B0058A7A0 /* Assets.xcassets */; };
 		08897A7529DD941B0058A7A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08897A7329DD941B0058A7A0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		08897A6529DD941A0058A7A0 /* Numberology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numberology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08897A6829DD941A0058A7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08897A6A29DD941A0058A7A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		08897A6C29DD941A0058A7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		08897A6F29DD941A0058A7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08897A7129DD941B0058A7A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08897A7429DD941B0058A7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08897A7629DD941B0058A7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,14 +53,20 @@
 			isa = PBXGroup;
 			children = (
 				08897A6829DD941A0058A7A0 /* AppDelegate.swift */,
-				08897A6A29DD941A0058A7A0 /* SceneDelegate.swift */,
 				08897A6C29DD941A0058A7A0 /* ViewController.swift */,
-				08897A6E29DD941A0058A7A0 /* Main.storyboard */,
+				08897A7C29DD979F0058A7A0 /* SupportingFiles */,
+			);
+			path = Numberology;
+			sourceTree = "<group>";
+		};
+		08897A7C29DD979F0058A7A0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				08897A7129DD941B0058A7A0 /* Assets.xcassets */,
 				08897A7329DD941B0058A7A0 /* LaunchScreen.storyboard */,
 				08897A7629DD941B0058A7A0 /* Info.plist */,
 			);
-			path = Numberology;
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +129,6 @@
 			files = (
 				08897A7529DD941B0058A7A0 /* LaunchScreen.storyboard in Resources */,
 				08897A7229DD941B0058A7A0 /* Assets.xcassets in Resources */,
-				08897A7029DD941A0058A7A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +141,12 @@
 			files = (
 				08897A6D29DD941A0058A7A0 /* ViewController.swift in Sources */,
 				08897A6929DD941A0058A7A0 /* AppDelegate.swift in Sources */,
-				08897A6B29DD941A0058A7A0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		08897A6E29DD941A0058A7A0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08897A6F29DD941A0058A7A0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		08897A7329DD941B0058A7A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +284,9 @@
 				INFOPLIST_FILE = Numberology/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +294,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Beavean.Numberology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -320,9 +315,9 @@
 				INFOPLIST_FILE = Numberology/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +325,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Beavean.Numberology;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
