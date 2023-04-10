@@ -12,7 +12,7 @@ extension UIFont {
         if let font = UIFont(name: Constants.Fonts.openSansRegular, size: size) {
             return font
         } else {
-            print("\(#function) font not found")
+            print("\(#function) not found")
             return nil
         }
     }
@@ -21,7 +21,7 @@ extension UIFont {
         if let font = UIFont(name: Constants.Fonts.opensSansSemiBold, size: size) {
             return font
         } else {
-            print("\(#function) font not found")
+            print("\(#function) not found")
             return nil
         }
     }

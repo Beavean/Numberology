@@ -7,20 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083E57BD29E1BC1A007CBAE5 /* CustomSpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BC29E1BC1A007CBAE5 /* CustomSpacerView.swift */; };
+		083E57BF29E1BDF0007CBAE5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */; };
+		083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C029E1C8FE007CBAE5 /* DicesView.swift */; };
+		083E57C329E20E06007CBAE5 /* DateNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C229E20E06007CBAE5 /* DateNumbersView.swift */; };
+		083E57C729E2211B007CBAE5 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C629E2211A007CBAE5 /* Month.swift */; };
+		083E57CA29E2D4C6007CBAE5 /* NetworkManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C929E2D4C6007CBAE5 /* NetworkManagerError.swift */; };
+		086FC0F929DEEA9B00E7F99E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 086FC0F829DEEA9B00E7F99E /* SnapKit */; };
+		086FC0FB29DF226200E7F99E /* NumberInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FC0FA29DF226200E7F99E /* NumberInputTextField.swift */; };
 		08897A6929DD941A0058A7A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08897A6829DD941A0058A7A0 /* AppDelegate.swift */; };
-		08897A6D29DD941A0058A7A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08897A6C29DD941A0058A7A0 /* ViewController.swift */; };
+		08897A6D29DD941A0058A7A0 /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08897A6C29DD941A0058A7A0 /* NumbersViewController.swift */; };
 		08897A7229DD941B0058A7A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08897A7129DD941B0058A7A0 /* Assets.xcassets */; };
 		08897A7529DD941B0058A7A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08897A7329DD941B0058A7A0 /* LaunchScreen.storyboard */; };
-		08897A7F29DD9F630058A7A0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08897A7E29DD9F630058A7A0 /* SnapKit */; };
+		088D6D6629DDC72C0045C092 /* NumbersOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D6529DDC72B0045C092 /* NumbersOption.swift */; };
+		088D6D6829DDC7AB0045C092 /* UserNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D6729DDC7AB0045C092 /* UserNumberView.swift */; };
+		088D6D6F29DDC83D0045C092 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D6E29DDC83D0045C092 /* Constants.swift */; };
+		088D6D7429DE09650045C092 /* UIButton+Selected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D7329DE09650045C092 /* UIButton+Selected.swift */; };
+		088D6D7829DE0A480045C092 /* RandomNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D7729DE0A480045C092 /* RandomNumberView.swift */; };
+		088D6D7C29DE0D6F0045C092 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088D6D7A29DE0D6F0045C092 /* OpenSans-SemiBold.ttf */; };
+		088D6D7D29DE0D6F0045C092 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088D6D7B29DE0D6F0045C092 /* OpenSans-Regular.ttf */; };
+		088D6D8029DE110B0045C092 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D7F29DE110B0045C092 /* UIColor+CustomColors.swift */; };
+		088D6D8229DE13EC0045C092 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8129DE13EC0045C092 /* UIView+Border.swift */; };
+		088D6D8629DE16390045C092 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8529DE16390045C092 /* CustomLabel.swift */; };
+		088D6D8829DE168B0045C092 /* UIFont+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8729DE168B0045C092 /* UIFont+CustomFonts.swift */; };
+		088D6D8A29DE1C110045C092 /* OperationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8929DE1C110045C092 /* OperationButton.swift */; };
+		088D6D8C29DE20860045C092 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8B29DE20860045C092 /* UIView+Shadow.swift */; };
+		088D6D8E29DE249F0045C092 /* NumberInRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8D29DE249F0045C092 /* NumberInRangeView.swift */; };
+		088D6D9029DE24AA0045C092 /* MultipleNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8F29DE24AA0045C092 /* MultipleNumbersView.swift */; };
+		08BE8C5E29E0417800D3343D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C5D29E0417800D3343D /* NetworkManager.swift */; };
+		08BE8C6029E07DB900D3343D /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C5F29E07DB900D3343D /* FactTableViewCell.swift */; };
+		08BE8C6229E080E500D3343D /* FactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C6129E080E500D3343D /* FactTableViewController.swift */; };
+		08BE8C6429E0C03300D3343D /* UIView+BlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C6329E0C03300D3343D /* UIView+BlurLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083E57BC29E1BC1A007CBAE5 /* CustomSpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacerView.swift; sourceTree = "<group>"; };
+		083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		083E57C029E1C8FE007CBAE5 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
+		083E57C229E20E06007CBAE5 /* DateNumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNumbersView.swift; sourceTree = "<group>"; };
+		083E57C629E2211A007CBAE5 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		083E57C929E2D4C6007CBAE5 /* NetworkManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerError.swift; sourceTree = "<group>"; };
+		086FC0FA29DF226200E7F99E /* NumberInputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputTextField.swift; sourceTree = "<group>"; };
 		08897A6529DD941A0058A7A0 /* Numberology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Numberology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08897A6829DD941A0058A7A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08897A6C29DD941A0058A7A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		08897A6C29DD941A0058A7A0 /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
 		08897A7129DD941B0058A7A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08897A7429DD941B0058A7A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08897A7629DD941B0058A7A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		088D6D6529DDC72B0045C092 /* NumbersOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOption.swift; sourceTree = "<group>"; };
+		088D6D6729DDC7AB0045C092 /* UserNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNumberView.swift; sourceTree = "<group>"; };
+		088D6D6E29DDC83D0045C092 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		088D6D7329DE09650045C092 /* UIButton+Selected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Selected.swift"; sourceTree = "<group>"; };
+		088D6D7729DE0A480045C092 /* RandomNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberView.swift; sourceTree = "<group>"; };
+		088D6D7A29DE0D6F0045C092 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		088D6D7B29DE0D6F0045C092 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		088D6D7F29DE110B0045C092 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		088D6D8129DE13EC0045C092 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		088D6D8529DE16390045C092 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		088D6D8729DE168B0045C092 /* UIFont+CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFonts.swift"; sourceTree = "<group>"; };
+		088D6D8929DE1C110045C092 /* OperationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationButton.swift; sourceTree = "<group>"; };
+		088D6D8B29DE20860045C092 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		088D6D8D29DE249F0045C092 /* NumberInRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInRangeView.swift; sourceTree = "<group>"; };
+		088D6D8F29DE24AA0045C092 /* MultipleNumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleNumbersView.swift; sourceTree = "<group>"; };
+		08BE8C5D29E0417800D3343D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		08BE8C5F29E07DB900D3343D /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
+		08BE8C6129E080E500D3343D /* FactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewController.swift; sourceTree = "<group>"; };
+		08BE8C6329E0C03300D3343D /* UIView+BlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,13 +80,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08897A7F29DD9F630058A7A0 /* SnapKit in Frameworks */,
+				086FC0F929DEEA9B00E7F99E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083E57C829E2D4AD007CBAE5 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				083E57C929E2D4C6007CBAE5 /* NetworkManagerError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		08897A5C29DD941A0058A7A0 = {
 			isa = PBXGroup;
 			children = (
@@ -55,7 +115,13 @@
 			isa = PBXGroup;
 			children = (
 				08897A6829DD941A0058A7A0 /* AppDelegate.swift */,
-				08897A6C29DD941A0058A7A0 /* ViewController.swift */,
+				088D6D6E29DDC83D0045C092 /* Constants.swift */,
+				088D6D6D29DDC7EE0045C092 /* Models */,
+				088D6D6C29DDC7E90045C092 /* Views */,
+				088D6D6A29DDC7E40045C092 /* Controllers */,
+				088D6D7229DE08F70045C092 /* Extension */,
+				083E57C829E2D4AD007CBAE5 /* Errors */,
+				088D6D7E29DE0D890045C092 /* Resources */,
 				08897A7C29DD979F0058A7A0 /* SupportingFiles */,
 			);
 			path = Numberology;
@@ -64,11 +130,79 @@
 		08897A7C29DD979F0058A7A0 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				08897A7129DD941B0058A7A0 /* Assets.xcassets */,
 				08897A7329DD941B0058A7A0 /* LaunchScreen.storyboard */,
 				08897A7629DD941B0058A7A0 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		088D6D6A29DDC7E40045C092 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				08897A6C29DD941A0058A7A0 /* NumbersViewController.swift */,
+				08BE8C6129E080E500D3343D /* FactTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		088D6D6C29DDC7E90045C092 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				088D6D8929DE1C110045C092 /* OperationButton.swift */,
+				088D6D8529DE16390045C092 /* CustomLabel.swift */,
+				083E57BC29E1BC1A007CBAE5 /* CustomSpacerView.swift */,
+				083E57C029E1C8FE007CBAE5 /* DicesView.swift */,
+				086FC0FA29DF226200E7F99E /* NumberInputTextField.swift */,
+				088D6D6729DDC7AB0045C092 /* UserNumberView.swift */,
+				088D6D7729DE0A480045C092 /* RandomNumberView.swift */,
+				088D6D8D29DE249F0045C092 /* NumberInRangeView.swift */,
+				088D6D8F29DE24AA0045C092 /* MultipleNumbersView.swift */,
+				083E57C229E20E06007CBAE5 /* DateNumbersView.swift */,
+				08BE8C5F29E07DB900D3343D /* FactTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		088D6D6D29DDC7EE0045C092 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				088D6D6529DDC72B0045C092 /* NumbersOption.swift */,
+				083E57C629E2211A007CBAE5 /* Month.swift */,
+				08BE8C5D29E0417800D3343D /* NetworkManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		088D6D7229DE08F70045C092 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				088D6D7329DE09650045C092 /* UIButton+Selected.swift */,
+				083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */,
+				088D6D7F29DE110B0045C092 /* UIColor+CustomColors.swift */,
+				088D6D8729DE168B0045C092 /* UIFont+CustomFonts.swift */,
+				088D6D8B29DE20860045C092 /* UIView+Shadow.swift */,
+				088D6D8129DE13EC0045C092 /* UIView+Border.swift */,
+				08BE8C6329E0C03300D3343D /* UIView+BlurLoader.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		088D6D7929DE0D6F0045C092 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				088D6D7A29DE0D6F0045C092 /* OpenSans-SemiBold.ttf */,
+				088D6D7B29DE0D6F0045C092 /* OpenSans-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		088D6D7E29DE0D890045C092 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				08897A7129DD941B0058A7A0 /* Assets.xcassets */,
+				088D6D7929DE0D6F0045C092 /* Fonts */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,7 +212,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08897A7929DD941B0058A7A0 /* Build configuration list for PBXNativeTarget "Numberology" */;
 			buildPhases = (
-				08897A8129DD9FDD0058A7A0 /* SwiftFormat */,
 				08897A8029DD9F7A0058A7A0 /* SwiftLint */,
 				08897A6129DD941A0058A7A0 /* Sources */,
 				08897A6229DD941A0058A7A0 /* Frameworks */,
@@ -90,7 +223,7 @@
 			);
 			name = Numberology;
 			packageProductDependencies = (
-				08897A7E29DD9F630058A7A0 /* SnapKit */,
+				086FC0F829DEEA9B00E7F99E /* SnapKit */,
 			);
 			productName = Numberology;
 			productReference = 08897A6529DD941A0058A7A0 /* Numberology.app */;
@@ -121,7 +254,7 @@
 			);
 			mainGroup = 08897A5C29DD941A0058A7A0;
 			packageReferences = (
-				08897A7D29DD9F630058A7A0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				086FC0F729DEEA9B00E7F99E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 08897A6629DD941A0058A7A0 /* Products */;
 			projectDirPath = "";
@@ -138,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				08897A7529DD941B0058A7A0 /* LaunchScreen.storyboard in Resources */,
+				088D6D7C29DE0D6F0045C092 /* OpenSans-SemiBold.ttf in Resources */,
+				088D6D7D29DE0D6F0045C092 /* OpenSans-Regular.ttf in Resources */,
 				08897A7229DD941B0058A7A0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,26 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat --exclude Pods \"${SRCROOT}\"\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
-		08897A8129DD9FDD0058A7A0 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n    swiftformat --exclude Pods \"${SRCROOT}\"\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -190,8 +306,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08897A6D29DD941A0058A7A0 /* ViewController.swift in Sources */,
+				088D6D8C29DE20860045C092 /* UIView+Shadow.swift in Sources */,
+				088D6D8A29DE1C110045C092 /* OperationButton.swift in Sources */,
+				088D6D6F29DDC83D0045C092 /* Constants.swift in Sources */,
+				08897A6D29DD941A0058A7A0 /* NumbersViewController.swift in Sources */,
+				088D6D8629DE16390045C092 /* CustomLabel.swift in Sources */,
+				088D6D8829DE168B0045C092 /* UIFont+CustomFonts.swift in Sources */,
+				088D6D6629DDC72C0045C092 /* NumbersOption.swift in Sources */,
+				083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */,
+				086FC0FB29DF226200E7F99E /* NumberInputTextField.swift in Sources */,
+				088D6D8029DE110B0045C092 /* UIColor+CustomColors.swift in Sources */,
+				088D6D6829DDC7AB0045C092 /* UserNumberView.swift in Sources */,
+				08BE8C5E29E0417800D3343D /* NetworkManager.swift in Sources */,
+				088D6D9029DE24AA0045C092 /* MultipleNumbersView.swift in Sources */,
+				083E57CA29E2D4C6007CBAE5 /* NetworkManagerError.swift in Sources */,
+				083E57C329E20E06007CBAE5 /* DateNumbersView.swift in Sources */,
+				083E57C729E2211B007CBAE5 /* Month.swift in Sources */,
+				08BE8C6029E07DB900D3343D /* FactTableViewCell.swift in Sources */,
 				08897A6929DD941A0058A7A0 /* AppDelegate.swift in Sources */,
+				08BE8C6429E0C03300D3343D /* UIView+BlurLoader.swift in Sources */,
+				083E57BF29E1BDF0007CBAE5 /* UIViewController+Alert.swift in Sources */,
+				083E57BD29E1BC1A007CBAE5 /* CustomSpacerView.swift in Sources */,
+				088D6D8E29DE249F0045C092 /* NumberInRangeView.swift in Sources */,
+				088D6D7829DE0A480045C092 /* RandomNumberView.swift in Sources */,
+				088D6D8229DE13EC0045C092 /* UIView+Border.swift in Sources */,
+				08BE8C6229E080E500D3343D /* FactTableViewController.swift in Sources */,
+				088D6D7429DE09650045C092 /* UIButton+Selected.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,10 +473,9 @@
 				DEVELOPMENT_TEAM = 9PF2GLF6PD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Numberology/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,7 +489,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -364,10 +503,9 @@
 				DEVELOPMENT_TEAM = 9PF2GLF6PD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Numberology/Info.plist;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,7 +519,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -409,7 +547,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		08897A7D29DD9F630058A7A0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		086FC0F729DEEA9B00E7F99E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -420,9 +558,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		08897A7E29DD9F630058A7A0 /* SnapKit */ = {
+		086FC0F829DEEA9B00E7F99E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 08897A7D29DD9F630058A7A0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 086FC0F729DEEA9B00E7F99E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

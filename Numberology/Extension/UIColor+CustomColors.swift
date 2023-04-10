@@ -13,5 +13,5 @@ extension UIColor {
     static let mainFillColor = Constants.Colors.mainFillColor.color
     static let mainTextColor = Constants.Colors.mainTextColor.color
     static let textOnFilledBackgroundColor = Constants.Colors.textOnFilledBackgroundColor.color
-    static let viewBackgroundColor = Constants.Colors.viewBackgroundColor.color
+    static let screenBackgroundColor = Constants.Colors.screenBackgroundColor.color
 }

@@ -1,0 +1,7 @@
+project: Numberology.xcodeproj
+retain_objc_accessible: true
+retain_public: true
+schemes:
+- Numberology
+targets:
+- Numberology
