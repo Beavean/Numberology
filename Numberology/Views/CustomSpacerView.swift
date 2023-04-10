@@ -8,7 +8,6 @@
 import UIKit
 
 final class CustomSpacerView: UIView {
-
     init() {
         super.init(frame: .zero)
         setup()

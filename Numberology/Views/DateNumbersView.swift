@@ -15,8 +15,8 @@ final class DateNumbersView: UIView {
 
     // MARK: - Properties
 
-    private let months = Month.allCases.map { $0.name }
-    private let days = Array(1...31)
+    private let months = Month.allCases.map(\.name)
+    private let days = Array(1 ... 31)
 
     // MARK: - Initialization
 
@@ -53,7 +53,7 @@ final class DateNumbersView: UIView {
 
 extension DateNumbersView: NumberInputContainer {
     func getNumbers() -> [Int] {
-        let selectedMonth = Month.allCases.map { $0.rawValue }[datePicker.selectedRow(inComponent: 0)]
+        let selectedMonth = Month.allCases.map(\.rawValue)[datePicker.selectedRow(inComponent: 0)]
         let selectedDay = days[datePicker.selectedRow(inComponent: 1)]
         return [selectedMonth, selectedDay]
     }
@@ -63,7 +63,7 @@ extension DateNumbersView: NumberInputContainer {
 
 extension DateNumbersView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+        2
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

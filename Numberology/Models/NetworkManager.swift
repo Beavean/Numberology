@@ -10,7 +10,7 @@ import Foundation
 final class NetworkManager {
     // MARK: - Properties
 
-   private let dateDictionaryKey = "Picked Date Fact:"
+    private let dateDictionaryKey = "Picked Date Fact:"
 
     // MARK: - Fetch methods
 

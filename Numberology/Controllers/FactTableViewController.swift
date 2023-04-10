@@ -10,6 +10,7 @@ import UIKit
 
 final class FactTableViewController: UITableViewController {
     // MARK: - Properties
+
     private var sortedData: [(key: String, value: String)] = []
 
     // MARK: - Lifecycle
@@ -19,6 +20,7 @@ final class FactTableViewController: UITableViewController {
         sortedData = data.sorted { $0.key < $1.key }
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -79,13 +81,13 @@ final class FactTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedData.count
+        sortedData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FactTableViewCell.reuseIdentifier,
                                                        for: indexPath)
-                as? FactTableViewCell
+            as? FactTableViewCell
         else { return UITableViewCell() }
         let title = sortedData[indexPath.row].key
         let text = sortedData[indexPath.row].value

@@ -17,6 +17,7 @@ final class NumberInRangeView: UIView {
         label.textAlignment = .center
         return label
     }()
+
     private let endRangeTextField = NumberInputTextField(placeholder: "Range end")
 
     // MARK: - Initialization

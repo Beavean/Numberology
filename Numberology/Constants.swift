@@ -7,8 +7,6 @@
 
 import UIKit
 
-// TODO: apply swiftformat
-
 enum Constants {
     enum URLComponents {
         static let scheme = "http"

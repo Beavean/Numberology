@@ -16,12 +16,8 @@ final class NumberInputTextField: UITextField {
     private let multipleInput: Bool
     private let allowedNumbers = "0123456789"
     private let allowedPunctuationSigns = ",."
-    private lazy var allowedCharacters: String = {
-        multipleInput ? allowedNumbers + allowedPunctuationSigns : allowedNumbers
-    }()
-    private lazy var allowedCharactersSet: CharacterSet = {
-        CharacterSet(charactersIn: allowedCharacters)
-    }()
+    private lazy var allowedCharacters = multipleInput ? allowedNumbers + allowedPunctuationSigns : allowedNumbers
+    private lazy var allowedCharactersSet = CharacterSet(charactersIn: allowedCharacters)
 
     // MARK: - Initialization
 
@@ -33,6 +29,7 @@ final class NumberInputTextField: UITextField {
         setup()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -40,7 +37,7 @@ final class NumberInputTextField: UITextField {
     // MARK: - Actions
 
     @objc private func textDidChange() {
-        guard let text = self.text else { return }
+        guard let text = text else { return }
         if !multipleInput {
             handleSingleInput(text: text)
         } else {
@@ -57,7 +54,7 @@ final class NumberInputTextField: UITextField {
         leftView = UIView(frame: leftViewFrame)
         leftViewMode = .always
         clearButtonMode = .always
-        self.placeholder = placeholder
+        placeholder = placeholder
         backgroundColor = .itemBackgroundColor
         addRoundedBorder()
     }
@@ -71,7 +68,7 @@ final class NumberInputTextField: UITextField {
     // MARK: - Input return
 
     func getInputtedInts() -> [Int] {
-        guard let text = self.text else { return [] }
+        guard let text else { return [] }
         if !multipleInput {
             if let singleNumber = Int(text) {
                 return [singleNumber]
@@ -133,7 +130,6 @@ final class NumberInputTextField: UITextField {
         }
         return true
     }
-
 }
 
 extension NumberInputTextField: UITextFieldDelegate {
@@ -144,7 +140,6 @@ extension NumberInputTextField: UITextFieldDelegate {
 
         if allowedCharactersSet.isSuperset(of: characterSet),
            let currentText = textField.text as NSString? {
-
             let proposedText = currentText.replacingCharacters(in: range, with: string)
 
             if !multipleInput {

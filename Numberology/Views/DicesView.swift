@@ -13,9 +13,11 @@ final class DicesView: UIView {
     private enum PositionX {
         case left, center, right
     }
+
     private enum PositionY {
         case top, center, bottom
     }
+
     private let mainColor: UIColor?
     private let backgroundFillColor: UIColor?
     private let cornerRadius: CGFloat = 15
@@ -31,6 +33,7 @@ final class DicesView: UIView {
         backgroundColor = .clear
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -69,7 +72,7 @@ final class DicesView: UIView {
     }
 
     private func getDiceDotPath(in rect: CGRect, with number: Int) -> UIBezierPath {
-        assert(1...6 ~= number, "Dice with such number is not implemented")
+        assert(1 ... 6 ~= number, "Dice with such number is not implemented")
         let dotsPath = UIBezierPath()
         switch number {
         case 1:
@@ -128,6 +131,7 @@ final class DicesView: UIView {
             radius: radius,
             startAngle: 0,
             endAngle: 2 * .pi,
-            clockwise: true)
+            clockwise: true
+        )
     }
 }

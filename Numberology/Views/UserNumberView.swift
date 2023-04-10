@@ -43,7 +43,7 @@ final class UserNumberView: UIView {
     private func configureUI() {
         addSubview(userNumberTextField)
         userNumberTextField.snp.makeConstraints {
-            $0.height.equalTo(Constants.StyleDefaults.itemHeight )
+            $0.height.equalTo(Constants.StyleDefaults.itemHeight)
             $0.left.right.top.equalToSuperview()
         }
     }
