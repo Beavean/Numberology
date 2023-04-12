@@ -18,6 +18,17 @@ final class NumberInputTextField: UITextField {
     private let allowedPunctuationSigns = ",."
     private lazy var allowedCharacters = multipleInput ? allowedNumbers + allowedPunctuationSigns : allowedNumbers
     private lazy var allowedCharactersSet = CharacterSet(charactersIn: allowedCharacters)
+    var inputNumbers: [Int] {
+        guard let text, !text.isEmpty else { return [] }
+        if !multipleInput {
+            guard let singleNumber = Int(text) else { return [] }
+            return [singleNumber]
+        } else {
+            let components = text.split(separator: ",")
+            let numbers = components.compactMap { Int($0.trimmingCharacters(in: .whitespaces)) }
+            return numbers
+        }
+    }
 
     // MARK: - Initialization
 
@@ -65,22 +76,6 @@ final class NumberInputTextField: UITextField {
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 
-    // MARK: - Input return
-
-    func getInputtedInts() -> [Int] {
-        guard let text else { return [] }
-        if !multipleInput {
-            if let singleNumber = Int(text) {
-                return [singleNumber]
-            }
-        } else {
-            let components = text.split(separator: ",")
-            let numbers = components.compactMap { Int($0.trimmingCharacters(in: .whitespaces)) }
-            return numbers
-        }
-        return []
-    }
-
     // MARK: - Helpers
 
     private func handleSingleInput(text: String) {
@@ -115,12 +110,7 @@ final class NumberInputTextField: UITextField {
     }
 
     private func checkSingleInput(proposedText: String) -> Bool {
-        if let newValue = Int(proposedText), newValue <= Constants.APIDefaults.maxNumber {
-            return true
-        } else if proposedText.isEmpty {
-            return true
-        }
-        return false
+        proposedText.isEmpty || (Int(proposedText) ?? 0) <= Constants.APIDefaults.maxNumber
     }
 
     private func checkMultipleInput(textField: UITextField, replacementString: String) -> Bool {
@@ -137,17 +127,15 @@ extension NumberInputTextField: UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
         let characterSet = CharacterSet(charactersIn: string)
-
-        if allowedCharactersSet.isSuperset(of: characterSet),
-           let currentText = textField.text as NSString? {
-            let proposedText = currentText.replacingCharacters(in: range, with: string)
-
-            if !multipleInput {
-                return checkSingleInput(proposedText: proposedText)
-            } else {
-                return checkMultipleInput(textField: textField, replacementString: string)
-            }
+        guard allowedCharactersSet.isSuperset(of: characterSet),
+              let currentText = textField.text as NSString? else {
+            return false
         }
-        return false
+        let proposedText = currentText.replacingCharacters(in: range, with: string)
+        if !multipleInput {
+            return checkSingleInput(proposedText: proposedText)
+        } else {
+            return checkMultipleInput(textField: textField, replacementString: string)
+        }
     }
 }

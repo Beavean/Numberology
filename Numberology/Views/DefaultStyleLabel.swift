@@ -1,5 +1,5 @@
 //
-//  CustomLabel.swift
+//  DefaultStyleLabel.swift
 //  Numberology
 //
 //  Created by Beavean on 05.04.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomLabel: UILabel {
+final class DefaultStyleLabel: UILabel {
     init(text: String = "",
          fontSize size: CGFloat = 16,
          isBold: Bool = false,

@@ -53,8 +53,8 @@ final class MultipleNumbersView: UIView {
 }
 
 extension MultipleNumbersView: NumberInputContainer {
-    func getNumbers() -> [Int] {
+    var numbers: [Int] {
         swapNumbersAndRemoveDuplicates()
-        return numbersInputTextField.getInputtedInts()
+        return numbersInputTextField.inputNumbers
     }
 }

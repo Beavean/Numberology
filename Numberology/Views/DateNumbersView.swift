@@ -52,7 +52,7 @@ final class DateNumbersView: UIView {
 // MARK: - NumberInputContainer
 
 extension DateNumbersView: NumberInputContainer {
-    func getNumbers() -> [Int] {
+    var numbers: [Int] {
         let selectedMonth = Month.allCases.map(\.rawValue)[datePicker.selectedRow(inComponent: 0)]
         let selectedDay = days[datePicker.selectedRow(inComponent: 1)]
         return [selectedMonth, selectedDay]

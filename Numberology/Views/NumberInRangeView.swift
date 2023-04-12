@@ -12,8 +12,8 @@ final class NumberInRangeView: UIView {
     // MARK: - UI Elements
 
     private lazy var startRangeTextField = NumberInputTextField(placeholder: "Range start")
-    private let separatorLabel: CustomLabel = {
-        let label = CustomLabel(text: "...", fontSize: 16, isBold: true)
+    private let separatorLabel: DefaultStyleLabel = {
+        let label = DefaultStyleLabel(text: "...", fontSize: 16, isBold: true)
         label.textAlignment = .center
         return label
     }()
@@ -35,8 +35,8 @@ final class NumberInRangeView: UIView {
     // MARK: - Configuration
 
     private func configureUI() {
-        let leftSpacer = CustomSpacerView()
-        let rightSpacer = CustomSpacerView()
+        let leftSpacer = Spacer()
+        let rightSpacer = Spacer()
         let stack = UIStackView(arrangedSubviews: [leftSpacer,
                                                    startRangeTextField,
                                                    separatorLabel,
@@ -71,8 +71,8 @@ final class NumberInRangeView: UIView {
 }
 
 extension NumberInRangeView: NumberInputContainer {
-    func getNumbers() -> [Int] {
+    var numbers: [Int] {
         swapTextFieldsIfNeeded()
-        return startRangeTextField.getInputtedInts() + endRangeTextField.getInputtedInts()
+        return startRangeTextField.inputNumbers + endRangeTextField.inputNumbers
     }
 }

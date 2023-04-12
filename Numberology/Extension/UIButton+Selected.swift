@@ -8,13 +8,13 @@
 import UIKit
 
 extension UIButton {
-    func setAsSelected() {
+    func setSelected() {
         backgroundColor = .mainFillColor
         setTitleColor(.textOnFilledBackgroundColor, for: .normal)
         removeRoundedBorder()
     }
 
-    func setAsUnselected() {
+    func setUnselected() {
         addRoundedBorder()
         backgroundColor = .itemBackgroundColor
         setTitleColor(.mainTextColor, for: .normal)

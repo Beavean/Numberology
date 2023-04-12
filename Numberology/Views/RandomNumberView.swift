@@ -11,7 +11,7 @@ import UIKit
 final class RandomNumberView: UIView {
     // MARK: - UI Elements
 
-    private let randomNumberLabel = CustomLabel(text: """
+    private let randomNumberLabel = DefaultStyleLabel(text: """
                                                 Tap on Display Fact button
                                                 to get a number with random available fact
                                                 """,
@@ -43,7 +43,7 @@ final class RandomNumberView: UIView {
 }
 
 extension RandomNumberView: NumberInputContainer {
-    func getNumbers() -> [Int] {
+    var numbers: [Int] {
         [0]
     }
 }

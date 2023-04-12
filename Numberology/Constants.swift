@@ -25,7 +25,6 @@ enum Constants {
         static let itemHeight: CGFloat = 52
         static let outerPadding: CGFloat = 16
         static let innerPadding: CGFloat = 8
-        static let verticalPadding: CGFloat = 24
         static let animationDuration = 0.3
     }
 

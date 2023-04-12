@@ -8,22 +8,22 @@
 import SnapKit
 import UIKit
 
-protocol NumberInputContainer {
-    func getNumbers() -> [Int]
+protocol NumberInputContainer: AnyObject {
+    var numbers: [Int] { get }
 }
 
 final class NumbersViewController: UIViewController {
     // MARK: - UI Elements
 
-    private let titleLabel: CustomLabel = {
-        let label = CustomLabel(text: "Interesting Numbers", fontSize: 28, isBold: true)
+    private let titleLabel: DefaultStyleLabel = {
+        let label = DefaultStyleLabel(text: "Interesting Numbers", fontSize: 28, isBold: true)
         label.textAlignment = .center
         label.textColor = .mainTextColor
         return label
     }()
 
-    private let appDescriptionLabel: CustomLabel = {
-        let label = CustomLabel(text: "This App about facts of Numbers and Dates", fontSize: 16, isBold: false)
+    private let appDescriptionLabel: DefaultStyleLabel = {
+        let label = DefaultStyleLabel(text: "This App about facts of Numbers and Dates", fontSize: 16, isBold: false)
         label.textAlignment = .center
         label.textColor = .mainTextColor
         return label
@@ -31,21 +31,20 @@ final class NumbersViewController: UIViewController {
 
     private let dicesView = DicesView(mainColor: .mainFillColor, backgroundFillColor: .itemBackgroundColor)
 
-    private let userNumberButton = OperationButton(title: "User\nnumber")
-    private let randomNumberButton = OperationButton(title: "Random\nnumber")
-    private let numberInRangeButton = OperationButton(title: "Number\nin a range")
-    private let multipleNumbersButton = OperationButton(title: "Multiple\nnumbers")
-    private let dateNumbersButton = OperationButton(title: "Date\nnumbers")
+    private let userNumberButton = OperationButton(title: "User number")
+    private let randomNumberButton = OperationButton(title: "Random number")
+    private let numberInRangeButton = OperationButton(title: "Range of numbers")
+    private let multipleNumbersButton = OperationButton(title: "Multiple numbers")
+    private let dateNumbersButton = OperationButton(title: "Date numbers")
     private let buttonsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.distribution = .fill
         stackView.spacing = 8
         return stackView
     }()
 
-    private lazy var informationLabel: CustomLabel = {
-        let label = CustomLabel(text: numbersOption.labelTitle, fontSize: 14)
+    private lazy var informationLabel: DefaultStyleLabel = {
+        let label = DefaultStyleLabel(text: numbersOption.labelTitle, fontSize: 14)
         return label
     }()
 
@@ -57,7 +56,6 @@ final class NumbersViewController: UIViewController {
     private let interactionView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fill
         stackView.alignment = .fill
         return stackView
     }()
@@ -76,7 +74,7 @@ final class NumbersViewController: UIViewController {
 
     private let outerPadding = Constants.StyleDefaults.outerPadding
     private let innerPadding = Constants.StyleDefaults.innerPadding
-    private let horizontalPadding = Constants.StyleDefaults.verticalPadding
+    private let horizontalPadding = Constants.StyleDefaults.outerPadding
     private let alertTitle = "Incorrect input"
     private let networkManager = NetworkManager()
     private lazy var numberInputContainer: NumberInputContainer = userNumberView
@@ -125,14 +123,14 @@ final class NumbersViewController: UIViewController {
     }
 
     @objc private func displayFactButtonPressed() {
-        guard !numberInputContainer.getNumbers().isEmpty else {
+        guard !numberInputContainer.numbers.isEmpty else {
             showInfoAlert(title: alertTitle, message: numbersOption.alertMessage)
             return
         }
         displayFactButton.showBlurLoader()
         switch numbersOption {
         case .userNumber, .multipleNumbers:
-            networkManager.fetchNumbersInfo(numbers: numberInputContainer.getNumbers()) { [weak self] result in
+            networkManager.fetchNumbersInfo(numbers: numberInputContainer.numbers) { [weak self] result in
                 self?.handleNetworkManagerResult(result)
             }
         case .randomNumber:
@@ -140,11 +138,11 @@ final class NumbersViewController: UIViewController {
                 self?.handleNetworkManagerResult(result)
             }
         case .numberInRange:
-            networkManager.fetchNumbersInfoInRange(range: numberInputContainer.getNumbers()) { [weak self] result in
+            networkManager.fetchNumbersInfoInRange(range: numberInputContainer.numbers) { [weak self] result in
                 self?.handleNetworkManagerResult(result)
             }
         case .dateNumbers:
-            networkManager.fetchDate(fromArray: numberInputContainer.getNumbers()) { [weak self] result in
+            networkManager.fetchDate(fromArray: numberInputContainer.numbers) { [weak self] result in
                 self?.handleNetworkManagerResult(result)
             }
         }
@@ -195,9 +193,9 @@ final class NumbersViewController: UIViewController {
 
         view.addSubview(dicesView)
         dicesView.snp.makeConstraints {
-            $0.top.equalTo(appDescriptionLabel.snp.bottom).offset(horizontalPadding)
+            $0.top.equalTo(appDescriptionLabel.snp.bottom).offset(outerPadding)
             $0.centerX.equalToSuperview()
-            $0.bottom.equalTo(buttonsStackView.snp.top).offset(-horizontalPadding)
+            $0.bottom.equalTo(buttonsStackView.snp.top).offset(-outerPadding)
             $0.width.equalTo(dicesView.snp.height)
         }
     }
@@ -227,31 +225,31 @@ final class NumbersViewController: UIViewController {
     private func setupState() {
         view.endEditing(true)
         informationLabel.text = numbersOption.labelTitle
-        userNumberButton.setAsUnselected()
-        randomNumberButton.setAsUnselected()
-        numberInRangeButton.setAsUnselected()
-        multipleNumbersButton.setAsUnselected()
-        dateNumbersButton.setAsUnselected()
+        userNumberButton.setUnselected()
+        randomNumberButton.setUnselected()
+        numberInRangeButton.setUnselected()
+        multipleNumbersButton.setUnselected()
+        dateNumbersButton.setUnselected()
         interactionView.arrangedSubviews.forEach { $0.isHidden = true }
         switch numbersOption {
         case .userNumber:
-            userNumberButton.setAsSelected()
+            userNumberButton.setSelected()
             userNumberView.isHidden = false
             numberInputContainer = userNumberView
         case .randomNumber:
-            randomNumberButton.setAsSelected()
+            randomNumberButton.setSelected()
             randomNumberView.isHidden = false
             numberInputContainer = randomNumberView
         case .numberInRange:
-            numberInRangeButton.setAsSelected()
+            numberInRangeButton.setSelected()
             numberInRangeView.isHidden = false
             numberInputContainer = numberInRangeView
         case .multipleNumbers:
-            multipleNumbersButton.setAsSelected()
+            multipleNumbersButton.setSelected()
             multipleNumbersView.isHidden = false
             numberInputContainer = multipleNumbersView
         case .dateNumbers:
-            dateNumbersButton.setAsSelected()
+            dateNumbersButton.setSelected()
             dateNumbersView.isHidden = false
             numberInputContainer = dateNumbersView
         }
@@ -259,12 +257,12 @@ final class NumbersViewController: UIViewController {
 
     // MARK: - Helpers
 
-    private func handleNetworkManagerResult(_ result: Result<[String: String], Error>) {
+    private func handleNetworkManagerResult(_ result: Result<[FactData], Error>) {
         DispatchQueue.main.async {
             self.displayFactButton.hideBlurLoader()
             switch result {
-            case let .success(dictionary):
-                let controller = FactTableViewController(data: dictionary)
+            case let .success(data):
+                let controller = FactTableViewController(data: data)
                 self.navigationController?.pushViewController(controller, animated: true)
             case let .failure(error):
                 self.showError(error)
@@ -302,18 +300,15 @@ private extension NumbersViewController {
               let keyboardEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         else { return }
         if notification.name == UIResponder.keyboardWillShowNotification {
-            dicesView.alpha = 1
             displayFactButton.snp.updateConstraints {
                 $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(keyboardEndFrame.height + innerPadding)
             }
         } else {
-            dicesView.alpha = 0
             displayFactButton.snp.updateConstraints {
                 $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(innerPadding)
             }
         }
         UIView.animate(withDuration: duration) {
-            self.dicesView.alpha = self.dicesView.alpha == 0 ? 1 : 0
             self.view.layoutIfNeeded()
         }
     }

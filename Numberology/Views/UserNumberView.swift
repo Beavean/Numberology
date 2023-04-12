@@ -50,7 +50,8 @@ final class UserNumberView: UIView {
 }
 
 extension UserNumberView: NumberInputContainer {
-    func getNumbers() -> [Int] {
-        userNumberTextField.getInputtedInts()
+    var numbers: [Int] {
+        userNumberTextField.inputNumbers
+
     }
 }

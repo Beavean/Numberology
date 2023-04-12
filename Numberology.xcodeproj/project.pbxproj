@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		083E57BD29E1BC1A007CBAE5 /* CustomSpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BC29E1BC1A007CBAE5 /* CustomSpacerView.swift */; };
+		083E57BD29E1BC1A007CBAE5 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BC29E1BC1A007CBAE5 /* Spacer.swift */; };
 		083E57BF29E1BDF0007CBAE5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */; };
 		083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C029E1C8FE007CBAE5 /* DicesView.swift */; };
 		083E57C329E20E06007CBAE5 /* DateNumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C229E20E06007CBAE5 /* DateNumbersView.swift */; };
@@ -28,7 +28,7 @@
 		088D6D7D29DE0D6F0045C092 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 088D6D7B29DE0D6F0045C092 /* OpenSans-Regular.ttf */; };
 		088D6D8029DE110B0045C092 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D7F29DE110B0045C092 /* UIColor+CustomColors.swift */; };
 		088D6D8229DE13EC0045C092 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8129DE13EC0045C092 /* UIView+Border.swift */; };
-		088D6D8629DE16390045C092 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8529DE16390045C092 /* CustomLabel.swift */; };
+		088D6D8629DE16390045C092 /* DefaultStyleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8529DE16390045C092 /* DefaultStyleLabel.swift */; };
 		088D6D8829DE168B0045C092 /* UIFont+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8729DE168B0045C092 /* UIFont+CustomFonts.swift */; };
 		088D6D8A29DE1C110045C092 /* OperationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8929DE1C110045C092 /* OperationButton.swift */; };
 		088D6D8C29DE20860045C092 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088D6D8B29DE20860045C092 /* UIView+Shadow.swift */; };
@@ -38,10 +38,11 @@
 		08BE8C6029E07DB900D3343D /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C5F29E07DB900D3343D /* FactTableViewCell.swift */; };
 		08BE8C6229E080E500D3343D /* FactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C6129E080E500D3343D /* FactTableViewController.swift */; };
 		08BE8C6429E0C03300D3343D /* UIView+BlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C6329E0C03300D3343D /* UIView+BlurLoader.swift */; };
+		08BF7D9929E6C35F0071B7DC /* FactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BF7D9829E6C35F0071B7DC /* FactData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		083E57BC29E1BC1A007CBAE5 /* CustomSpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacerView.swift; sourceTree = "<group>"; };
+		083E57BC29E1BC1A007CBAE5 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		083E57C029E1C8FE007CBAE5 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
 		083E57C229E20E06007CBAE5 /* DateNumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateNumbersView.swift; sourceTree = "<group>"; };
@@ -63,7 +64,7 @@
 		088D6D7B29DE0D6F0045C092 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		088D6D7F29DE110B0045C092 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		088D6D8129DE13EC0045C092 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
-		088D6D8529DE16390045C092 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		088D6D8529DE16390045C092 /* DefaultStyleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStyleLabel.swift; sourceTree = "<group>"; };
 		088D6D8729DE168B0045C092 /* UIFont+CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFonts.swift"; sourceTree = "<group>"; };
 		088D6D8929DE1C110045C092 /* OperationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationButton.swift; sourceTree = "<group>"; };
 		088D6D8B29DE20860045C092 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		08BE8C5F29E07DB900D3343D /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
 		08BE8C6129E080E500D3343D /* FactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewController.swift; sourceTree = "<group>"; };
 		08BE8C6329E0C03300D3343D /* UIView+BlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurLoader.swift"; sourceTree = "<group>"; };
+		08BF7D9829E6C35F0071B7DC /* FactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				088D6D8929DE1C110045C092 /* OperationButton.swift */,
-				088D6D8529DE16390045C092 /* CustomLabel.swift */,
-				083E57BC29E1BC1A007CBAE5 /* CustomSpacerView.swift */,
+				088D6D8529DE16390045C092 /* DefaultStyleLabel.swift */,
+				083E57BC29E1BC1A007CBAE5 /* Spacer.swift */,
 				083E57C029E1C8FE007CBAE5 /* DicesView.swift */,
 				086FC0FA29DF226200E7F99E /* NumberInputTextField.swift */,
 				088D6D6729DDC7AB0045C092 /* UserNumberView.swift */,
@@ -168,6 +170,7 @@
 			children = (
 				088D6D6529DDC72B0045C092 /* NumbersOption.swift */,
 				083E57C629E2211A007CBAE5 /* Month.swift */,
+				08BF7D9829E6C35F0071B7DC /* FactData.swift */,
 				08BE8C5D29E0417800D3343D /* NetworkManager.swift */,
 			);
 			path = Models;
@@ -310,7 +313,7 @@
 				088D6D8A29DE1C110045C092 /* OperationButton.swift in Sources */,
 				088D6D6F29DDC83D0045C092 /* Constants.swift in Sources */,
 				08897A6D29DD941A0058A7A0 /* NumbersViewController.swift in Sources */,
-				088D6D8629DE16390045C092 /* CustomLabel.swift in Sources */,
+				088D6D8629DE16390045C092 /* DefaultStyleLabel.swift in Sources */,
 				088D6D8829DE168B0045C092 /* UIFont+CustomFonts.swift in Sources */,
 				088D6D6629DDC72C0045C092 /* NumbersOption.swift in Sources */,
 				083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */,
@@ -320,13 +323,14 @@
 				08BE8C5E29E0417800D3343D /* NetworkManager.swift in Sources */,
 				088D6D9029DE24AA0045C092 /* MultipleNumbersView.swift in Sources */,
 				083E57CA29E2D4C6007CBAE5 /* NetworkManagerError.swift in Sources */,
+				08BF7D9929E6C35F0071B7DC /* FactData.swift in Sources */,
 				083E57C329E20E06007CBAE5 /* DateNumbersView.swift in Sources */,
 				083E57C729E2211B007CBAE5 /* Month.swift in Sources */,
 				08BE8C6029E07DB900D3343D /* FactTableViewCell.swift in Sources */,
 				08897A6929DD941A0058A7A0 /* AppDelegate.swift in Sources */,
 				08BE8C6429E0C03300D3343D /* UIView+BlurLoader.swift in Sources */,
 				083E57BF29E1BDF0007CBAE5 /* UIViewController+Alert.swift in Sources */,
-				083E57BD29E1BC1A007CBAE5 /* CustomSpacerView.swift in Sources */,
+				083E57BD29E1BC1A007CBAE5 /* Spacer.swift in Sources */,
 				088D6D8E29DE249F0045C092 /* NumberInRangeView.swift in Sources */,
 				088D6D7829DE0A480045C092 /* RandomNumberView.swift in Sources */,
 				088D6D8229DE13EC0045C092 /* UIView+Border.swift in Sources */,

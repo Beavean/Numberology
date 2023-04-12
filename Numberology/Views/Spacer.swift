@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomSpacerView: UIView {
+final class Spacer: UIView {
     init() {
         super.init(frame: .zero)
         setup()

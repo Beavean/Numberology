@@ -11,11 +11,11 @@ import UIKit
 final class FactTableViewCell: UITableViewCell {
     // MARK: - UI Elements
 
-    private let titleLabel = CustomLabel(fontSize: 28,
+    private let titleLabel = DefaultStyleLabel(fontSize: 28,
                                          isBold: true,
                                          textAlignment: .center,
                                          textColor: .textOnFilledBackgroundColor)
-    private let descriptionLabel = CustomLabel(fontSize: 16,
+    private let descriptionLabel = DefaultStyleLabel(fontSize: 16,
                                                isBold: true,
                                                textAlignment: .center,
                                                textColor: .textOnFilledBackgroundColor)
@@ -47,7 +47,7 @@ final class FactTableViewCell: UITableViewCell {
 
         addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(Constants.StyleDefaults.verticalPadding)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(Constants.StyleDefaults.outerPadding)
             $0.left.equalTo(titleLabel.snp.left)
             $0.right.equalTo(titleLabel.snp.right)
             $0.bottom.equalToSuperview().inset(Constants.StyleDefaults.outerPadding)
