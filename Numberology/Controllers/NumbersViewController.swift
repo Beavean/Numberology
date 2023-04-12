@@ -138,8 +138,9 @@ final class NumbersViewController: UIViewController {
                 self?.handleNetworkManagerResult(result)
             }
         case .numberInRange:
+            let rangeNumbers = numberInputContainer.numbers
             networkManager.fetchNumbersInfoInRange(range: numberInputContainer.numbers) { [weak self] result in
-                self?.handleNetworkManagerResult(result)
+                self?.handleNetworkManagerResult(result, rangeStart: rangeNumbers.first, rangeEnd: rangeNumbers.last)
             }
         case .dateNumbers:
             networkManager.fetchDate(fromArray: numberInputContainer.numbers) { [weak self] result in
@@ -197,6 +198,7 @@ final class NumbersViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(buttonsStackView.snp.top).offset(-outerPadding)
             $0.width.equalTo(dicesView.snp.height)
+            $0.width.lessThanOrEqualToSuperview().inset(outerPadding)
         }
     }
 
@@ -257,12 +259,16 @@ final class NumbersViewController: UIViewController {
 
     // MARK: - Helpers
 
-    private func handleNetworkManagerResult(_ result: Result<[FactData], Error>) {
+    private func handleNetworkManagerResult(_ result: Result<[FactData], Error>,
+                                            rangeStart: Int? = nil,
+                                            rangeEnd: Int? = nil) {
         DispatchQueue.main.async {
             self.displayFactButton.hideBlurLoader()
             switch result {
             case let .success(data):
-                let controller = FactTableViewController(data: data)
+                let controller = FactTableViewController(data: data,
+                                                         rangeStartNumber: rangeStart,
+                                                         rangeEndNumber: rangeEnd)
                 self.navigationController?.pushViewController(controller, animated: true)
             case let .failure(error):
                 self.showError(error)

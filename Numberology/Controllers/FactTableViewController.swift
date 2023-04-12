@@ -11,13 +11,20 @@ import UIKit
 final class FactTableViewController: UITableViewController {
     // MARK: - Properties
 
-    private var sortedData: [(key: String, value: String)] = []
+    private var data = [FactData]()
+    private var isFetchingMoreData = false
+    private var currentEndNumber: Int?
+    private var requestedRangeEndNumber: Int?
+    private let networkManager = NetworkManager()
 
     // MARK: - Lifecycle
 
-    init(data: [String: String]) {
+    init(data: [FactData], rangeStartNumber: Int? = nil, rangeEndNumber: Int? = nil) {
         super.init(nibName: nil, bundle: nil)
-        sortedData = data.sorted { $0.key < $1.key }
+        self.data = data
+        guard let rangeStartNumber, let rangeEndNumber else { return }
+        currentEndNumber = rangeStartNumber + data.count
+        requestedRangeEndNumber = rangeEndNumber
     }
 
     @available(*, unavailable)
@@ -33,7 +40,7 @@ final class FactTableViewController: UITableViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        updateScrollingEnabled()
+        tableView.isScrollEnabled = tableView.contentSize.height >= tableView.bounds.size.height
     }
 
     // MARK: - Actions
@@ -49,6 +56,7 @@ final class FactTableViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
+        tableView.prefetchDataSource = self
     }
 
     private func configureNavigationBar() {
@@ -70,18 +78,36 @@ final class FactTableViewController: UITableViewController {
 
     // MARK: - Helpers
 
-    private func updateScrollingEnabled() {
-        if tableView.contentSize.height <= tableView.bounds.size.height {
-            tableView.isScrollEnabled = false
-        } else {
-            tableView.isScrollEnabled = true
+    private func fetchMoreFacts() {
+        guard let currentEndNumber,
+              let requestedRangeEndNumber,
+              currentEndNumber < requestedRangeEndNumber else { return }
+        isFetchingMoreData = true
+        let range = [currentEndNumber, requestedRangeEndNumber]
+        networkManager.fetchNumbersInfoInRange(range: range) { [weak self] result in
+            self?.handleNetworkManagerResult(result)
+        }
+    }
+
+    private func handleNetworkManagerResult(_ result: Result<[FactData], Error>) {
+        DispatchQueue.main.async { [self] in
+            switch result {
+            case let .success(fetchedData):
+                guard let oldEndNumber = currentEndNumber else { return }
+                currentEndNumber = oldEndNumber + data.count
+                data.append(contentsOf: fetchedData)
+                tableView.reloadData()
+                isFetchingMoreData = false
+            case let .failure(error):
+                showError(error)
+            }
         }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        sortedData.count
+        data.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,9 +115,21 @@ final class FactTableViewController: UITableViewController {
                                                        for: indexPath)
             as? FactTableViewCell
         else { return UITableViewCell() }
-        let title = sortedData[indexPath.row].key
-        let text = sortedData[indexPath.row].value
+        let title = data[indexPath.row].number
+        let text = data[indexPath.row].fact
         cell.configure(withTitle: title, text: text)
         return cell
+    }
+}
+
+// MARK: - UITableViewDataSourcePrefetching
+
+extension FactTableViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard let maxIndexPath = indexPaths.max(),
+              maxIndexPath.row >= (data.count / 2),
+              !isFetchingMoreData
+        else { return }
+        fetchMoreFacts()
     }
 }
