@@ -143,7 +143,7 @@ final class NetworkManager {
     }
 
     private func sortData(from data: [FactData]) -> [FactData] {
-        return data.sorted {
+        data.sorted {
             guard let num1 = Int($0.number), let num2 = Int($1.number) else {
                 if Int($0.number) != nil {
                     return true
@@ -155,6 +155,5 @@ final class NetworkManager {
             }
             return num1 < num2
         }
-
     }
 }

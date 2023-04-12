@@ -12,13 +12,13 @@ final class FactTableViewCell: UITableViewCell {
     // MARK: - UI Elements
 
     private let titleLabel = DefaultStyleLabel(fontSize: 28,
-                                         isBold: true,
-                                         textAlignment: .center,
-                                         textColor: .textOnFilledBackgroundColor)
-    private let descriptionLabel = DefaultStyleLabel(fontSize: 16,
                                                isBold: true,
                                                textAlignment: .center,
                                                textColor: .textOnFilledBackgroundColor)
+    private let descriptionLabel = DefaultStyleLabel(fontSize: 16,
+                                                     isBold: true,
+                                                     textAlignment: .center,
+                                                     textColor: .textOnFilledBackgroundColor)
 
     // MARK: - Properties
 

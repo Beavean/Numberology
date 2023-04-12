@@ -12,12 +12,12 @@ final class RandomNumberView: UIView {
     // MARK: - UI Elements
 
     private let randomNumberLabel = DefaultStyleLabel(text: """
-                                                Tap on Display Fact button
-                                                to get a number with random available fact
-                                                """,
-                                                fontSize: 16,
-                                                isBold: true,
-                                                textAlignment: .center)
+                                                      Tap on Display Fact button
+                                                      to get a number with random available fact
+                                                      """,
+                                                      fontSize: 16,
+                                                      isBold: true,
+                                                      textAlignment: .center)
 
     // MARK: - Initialization
 

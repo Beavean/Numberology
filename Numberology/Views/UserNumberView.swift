@@ -52,6 +52,5 @@ final class UserNumberView: UIView {
 extension UserNumberView: NumberInputContainer {
     var numbers: [Int] {
         userNumberTextField.inputNumbers
-
     }
 }
