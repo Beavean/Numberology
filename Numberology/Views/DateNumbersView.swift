@@ -41,7 +41,6 @@ final class DateNumbersView: UIView {
         datePicker.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        datePicker.accessibilityIdentifier = "factDatePicker"
     }
 
     private func setupDatePicker() {

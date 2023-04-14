@@ -299,6 +299,11 @@ extension NumbersViewController {
         informationLabel.accessibilityIdentifier = "informationLabel"
         interactionView.accessibilityIdentifier = "interactionView"
         displayFactButton.accessibilityIdentifier = "displayFactButton"
+        userNumberView.accessibilityIdentifier = "userNumberView"
+        randomNumberView.accessibilityIdentifier = "randomNumberView"
+        numberInRangeView.accessibilityIdentifier = "numberInRangeView"
+        multipleNumbersView.accessibilityIdentifier = "multipleNumbersView"
+        dateNumbersView.accessibilityIdentifier = "dateNumbersView"
     }
 }
 

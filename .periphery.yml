@@ -5,3 +5,5 @@ schemes:
 - Numberology
 targets:
 - Numberology
+- NumberologyTests
+- NumberologyUITests

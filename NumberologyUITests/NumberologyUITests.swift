@@ -9,7 +9,7 @@ import XCTest
 
 final class NumberologyUITests: XCTestCase {
     private var app: XCUIApplication!
-    private let timeout: TimeInterval = 1
+    private let timeout: TimeInterval = 2
 
     // MARK: - Numbers view
 
@@ -34,12 +34,11 @@ final class NumberologyUITests: XCTestCase {
     // MARK: - Interaction elements
 
     private lazy var userNumberTextField = app.textFields["userNumberTextField"]
-    private lazy var randomNumberLabel = app.staticTexts["userNumberTextField"]
+    private lazy var randomNumberLabel = app.staticTexts["randomNumberLabel"]
     private lazy var startRangeTextField = app.textFields["startRangeTextField"]
     private lazy var separatorLabel = app.staticTexts["separatorLabel"]
     private lazy var endRangeTextField = app.textFields["endRangeTextField"]
     private lazy var numbersInputTextField = app.textFields["numbersInputTextField"]
-    private lazy var datePicker = app.datePickers["factDatePicker"]
 
     // MARK: - Fact Table View
 
@@ -96,25 +95,32 @@ final class NumberologyUITests: XCTestCase {
 
     func testUserNumberFact() {
         userNumberTextField.tap()
+        checkHiddenElements(switchedElement: userNumberView)
         userNumberTextField.typeText("1337")
         displayFactButton.tap()
         checkFactViewForExistence(expectationName: #function) { [self] in
             XCTAssertTrue(factTableView.cells.count == 1)
         }
+        backButton.tap()
+        checkHiddenElements(switchedElement: userNumberView)
     }
 
     func testRandomNumberFact() {
         randomNumberButton.tap()
+        checkHiddenElements(switchedElement: randomNumberView)
+        XCTAssertTrue(randomNumberLabel.exists)
         displayFactButton.tap()
         checkFactViewForExistence(expectationName: #function) { [self] in
             XCTAssertTrue(factTableView.cells.count == 1)
         }
         backButton.tap()
         testInterfaceElements()
+        checkHiddenElements(switchedElement: randomNumberView)
     }
 
     func testRangeOfNumbersFacts() {
         numberInRangeButton.tap()
+        checkHiddenElements(switchedElement: numberInRangeView)
         XCTAssertTrue(separatorLabel.exists)
         startRangeTextField.tap()
         startRangeTextField.typeText("1")
@@ -124,10 +130,13 @@ final class NumberologyUITests: XCTestCase {
         checkFactViewForExistence(expectationName: #function) { [self] in
             XCTAssertTrue(factTableView.cells.count > 1)
         }
+        backButton.tap()
+        checkHiddenElements(switchedElement: numberInRangeView)
     }
 
     func testMultipleNumbersFacts() {
         multipleNumbersButton.tap()
+        checkHiddenElements(switchedElement: multipleNumbersView)
         numbersInputTextField.tap()
         numbersInputTextField.typeText("1. 1337. 9999")
         displayFactButton.tap()
@@ -135,15 +144,27 @@ final class NumberologyUITests: XCTestCase {
             XCTAssertTrue(factTableView.cells.count == 3)
         }
         backButton.tap()
+        checkHiddenElements(switchedElement: multipleNumbersView)
     }
 
     func testDateFact() {
         dateNumbersButton.tap()
+        checkHiddenElements(switchedElement: dateNumbersView)
         app.pickerWheels["January"].swipeUp()
         app.pickerWheels["1"].swipeUp()
         displayFactButton.tap()
         checkFactViewForExistence(expectationName: #function) { [self] in
             XCTAssertTrue(factTableView.cells.count == 1)
+        }
+        backButton.tap()
+        checkHiddenElements(switchedElement: dateNumbersView)
+    }
+
+    private func checkHiddenElements(switchedElement: XCUIElement) {
+        XCTAssertTrue(switchedElement.exists)
+        let elements = [userNumberView, randomNumberView, numberInRangeView, multipleNumbersView, dateNumbersView]
+        for element in elements where element != switchedElement {
+            XCTAssertFalse(element.exists)
         }
     }
 
