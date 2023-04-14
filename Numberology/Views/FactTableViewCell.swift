@@ -54,8 +54,13 @@ final class FactTableViewCell: UITableViewCell {
         }
     }
 
-    func configure(withTitle title: String, text: String) {
-        titleLabel.text = title
-        descriptionLabel.text = text
+    func configure(withNumber number: Int, fact: String) {
+        titleLabel.text = "\(number)"
+        descriptionLabel.text = fact
+    }
+
+    func configure(withDate date: String, fact: String) {
+        titleLabel.text = date
+        descriptionLabel.text = fact
     }
 }

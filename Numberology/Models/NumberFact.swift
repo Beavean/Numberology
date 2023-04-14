@@ -8,6 +8,6 @@
 import Foundation
 
 struct NumberFact {
-    let number: String
+    let number: Int
     let fact: String
 }

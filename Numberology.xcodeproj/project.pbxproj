@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0830FA8C29E96FE500C949BA /* DateFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FA8B29E96FE500C949BA /* DateFact.swift */; };
 		083E57BD29E1BC1A007CBAE5 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BC29E1BC1A007CBAE5 /* Spacer.swift */; };
 		083E57BF29E1BDF0007CBAE5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */; };
 		083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C029E1C8FE007CBAE5 /* DicesView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0830FA8B29E96FE500C949BA /* DateFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFact.swift; sourceTree = "<group>"; };
 		083E57BC29E1BC1A007CBAE5 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		083E57C029E1C8FE007CBAE5 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				088D6D6529DDC72B0045C092 /* NumbersOption.swift */,
 				083E57C629E2211A007CBAE5 /* Month.swift */,
 				08BF7D9829E6C35F0071B7DC /* NumberFact.swift */,
+				0830FA8B29E96FE500C949BA /* DateFact.swift */,
 				08BE8C5D29E0417800D3343D /* NetworkManager.swift */,
 			);
 			path = Models;
@@ -318,6 +321,7 @@
 				088D6D6629DDC72C0045C092 /* NumbersOption.swift in Sources */,
 				083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */,
 				086FC0FB29DF226200E7F99E /* NumberInputTextField.swift in Sources */,
+				0830FA8C29E96FE500C949BA /* DateFact.swift in Sources */,
 				088D6D8029DE110B0045C092 /* UIColor+CustomColors.swift in Sources */,
 				088D6D6829DDC7AB0045C092 /* UserNumberView.swift in Sources */,
 				08BE8C5E29E0417800D3343D /* NetworkManager.swift in Sources */,

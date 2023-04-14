@@ -12,19 +12,27 @@ final class FactTableViewController: UITableViewController {
     // MARK: - Properties
 
     private var data = [NumberFact]()
+    private var dateFact = [DateFact]()
     private var isFetchingMoreData = false
     private var currentEndNumber: Int?
     private var requestedRangeEndNumber: Int?
     private let networkManager = NetworkManager()
+    private var isShowingDateFact = false
 
     // MARK: - Lifecycle
 
-    init(data: [NumberFact], rangeStartNumber: Int? = nil, rangeEndNumber: Int? = nil) {
+    init(numerFacts: [NumberFact], rangeStartNumber: Int? = nil, rangeEndNumber: Int? = nil) {
         super.init(nibName: nil, bundle: nil)
-        self.data = data
+        data = numerFacts
         guard let rangeStartNumber, let rangeEndNumber else { return }
-        currentEndNumber = rangeStartNumber + data.count
+        currentEndNumber = rangeStartNumber + numerFacts.count
         requestedRangeEndNumber = rangeEndNumber
+    }
+
+    init(dateFact: [DateFact]) {
+        super.init(nibName: nil, bundle: nil)
+        self.dateFact = dateFact
+        isShowingDateFact = true
     }
 
     @available(*, unavailable)
@@ -107,7 +115,7 @@ final class FactTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        isShowingDateFact ? dateFact.count : data.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,9 +123,11 @@ final class FactTableViewController: UITableViewController {
                                                        for: indexPath)
             as? FactTableViewCell
         else { return UITableViewCell() }
-        let title = data[indexPath.row].number
-        let text = data[indexPath.row].fact
-        cell.configure(withTitle: title, text: text)
+        if isShowingDateFact {
+            cell.configure(withDate: dateFact[indexPath.row].date, fact: dateFact[indexPath.row].fact)
+        } else {
+            cell.configure(withNumber: data[indexPath.row].number, fact: data[indexPath.row].fact)
+        }
         return cell
     }
 }

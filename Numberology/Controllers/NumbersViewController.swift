@@ -21,12 +21,14 @@ final class NumbersViewController: UIViewController {
         label.textColor = .mainTextColor
         return label
     }()
+
     private let appDescriptionLabel: DefaultStyleLabel = {
         let label = DefaultStyleLabel(text: "This App about facts of Numbers and Dates", fontSize: 16, isBold: false)
         label.textAlignment = .center
         label.textColor = .mainTextColor
         return label
     }()
+
     private let dicesView = DicesView(mainColor: .mainFillColor, backgroundFillColor: .itemBackgroundColor)
     private let userNumberButton = OperationButton(title: "User number")
     private let randomNumberButton = OperationButton(title: "Random number")
@@ -39,6 +41,7 @@ final class NumbersViewController: UIViewController {
         stackView.spacing = 8
         return stackView
     }()
+
     private lazy var informationLabel = DefaultStyleLabel(text: numbersOption.labelTitle, fontSize: 14)
     private let userNumberView = UserNumberView()
     private let randomNumberView = RandomNumberView()
@@ -51,6 +54,7 @@ final class NumbersViewController: UIViewController {
         stackView.alignment = .fill
         return stackView
     }()
+
     private let displayFactButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .mainFillColor
@@ -135,7 +139,17 @@ final class NumbersViewController: UIViewController {
             }
         case .dateNumbers:
             networkManager.fetchDate(fromArray: numberInputContainer.numbers) { [weak self] result in
-                self?.handleNetworkManagerResult(result)
+                guard let self else { return }
+                DispatchQueue.main.async {
+                    self.displayFactButton.hideBlurLoader()
+                    switch result {
+                    case let .success(dateFact):
+                        let controller = FactTableViewController(dateFact: dateFact)
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    case let .failure(error):
+                        self.showError(error)
+                    }
+                }
             }
         }
     }
@@ -257,7 +271,7 @@ final class NumbersViewController: UIViewController {
             self.displayFactButton.hideBlurLoader()
             switch result {
             case let .success(data):
-                let controller = FactTableViewController(data: data,
+                let controller = FactTableViewController(numerFacts: data,
                                                          rangeStartNumber: rangeStart,
                                                          rangeEndNumber: rangeEnd)
                 self.navigationController?.pushViewController(controller, animated: true)
