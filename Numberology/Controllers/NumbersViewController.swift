@@ -125,20 +125,20 @@ final class NumbersViewController: UIViewController {
         displayFactButton.showBlurLoader()
         switch numbersOption {
         case .userNumber, .multipleNumbers:
-            networkManager.fetchNumbersInfo(numbers: numberInputContainer.numbers) { [weak self] result in
+            networkManager.fetchNumbersFacts(numbers: numberInputContainer.numbers) { [weak self] result in
                 self?.handleNetworkManagerResult(result)
             }
         case .randomNumber:
-            networkManager.fetchRandomNumberWithFact { [weak self] result in
+            networkManager.fetchFactForRandomNumber { [weak self] result in
                 self?.handleNetworkManagerResult(result)
             }
         case .numberInRange:
             let rangeNumbers = numberInputContainer.numbers
-            networkManager.fetchNumbersInfoInRange(range: numberInputContainer.numbers) { [weak self] result in
+            networkManager.fetchFactsForNumbersIn(range: numberInputContainer.numbers) { [weak self] result in
                 self?.handleNetworkManagerResult(result, rangeStart: rangeNumbers.first, rangeEnd: rangeNumbers.last)
             }
         case .dateNumbers:
-            networkManager.fetchDate(fromArray: numberInputContainer.numbers) { [weak self] result in
+            networkManager.fetchDateFact(fromArray: numberInputContainer.numbers) { [weak self] result in
                 guard let self else { return }
                 DispatchQueue.main.async {
                     self.displayFactButton.hideBlurLoader()

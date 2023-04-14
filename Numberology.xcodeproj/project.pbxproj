@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0830FA8C29E96FE500C949BA /* DateFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FA8B29E96FE500C949BA /* DateFact.swift */; };
+		0830FA9429E9849F00C949BA /* NumberologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FA9329E9849F00C949BA /* NumberologyTests.swift */; };
 		083E57BD29E1BC1A007CBAE5 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BC29E1BC1A007CBAE5 /* Spacer.swift */; };
 		083E57BF29E1BDF0007CBAE5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */; };
 		083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C029E1C8FE007CBAE5 /* DicesView.swift */; };
@@ -42,8 +43,20 @@
 		08BF7D9929E6C35F0071B7DC /* NumberFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BF7D9829E6C35F0071B7DC /* NumberFact.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0830FA9529E9849F00C949BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08897A5D29DD941A0058A7A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08897A6429DD941A0058A7A0;
+			remoteInfo = Numberology;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0830FA8B29E96FE500C949BA /* DateFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFact.swift; sourceTree = "<group>"; };
+		0830FA9129E9849F00C949BA /* NumberologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberologyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0830FA9329E9849F00C949BA /* NumberologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberologyTests.swift; sourceTree = "<group>"; };
 		083E57BC29E1BC1A007CBAE5 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		083E57C029E1C8FE007CBAE5 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
@@ -80,6 +93,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0830FA8E29E9849F00C949BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08897A6229DD941A0058A7A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0830FA9229E9849F00C949BA /* NumberologyTests */ = {
+			isa = PBXGroup;
+			children = (
+				0830FA9329E9849F00C949BA /* NumberologyTests.swift */,
+			);
+			path = NumberologyTests;
+			sourceTree = "<group>";
+		};
 		083E57C829E2D4AD007CBAE5 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				08897A6729DD941A0058A7A0 /* Numberology */,
+				0830FA9229E9849F00C949BA /* NumberologyTests */,
 				08897A6629DD941A0058A7A0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				08897A6529DD941A0058A7A0 /* Numberology.app */,
+				0830FA9129E9849F00C949BA /* NumberologyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +244,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0830FA9029E9849F00C949BA /* NumberologyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0830FA9929E9849F00C949BA /* Build configuration list for PBXNativeTarget "NumberologyTests" */;
+			buildPhases = (
+				0830FA8D29E9849F00C949BA /* Sources */,
+				0830FA8E29E9849F00C949BA /* Frameworks */,
+				0830FA8F29E9849F00C949BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0830FA9629E9849F00C949BA /* PBXTargetDependency */,
+			);
+			name = NumberologyTests;
+			productName = NumberologyTests;
+			productReference = 0830FA9129E9849F00C949BA /* NumberologyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		08897A6429DD941A0058A7A0 /* Numberology */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08897A7929DD941B0058A7A0 /* Build configuration list for PBXNativeTarget "Numberology" */;
@@ -242,9 +290,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					0830FA9029E9849F00C949BA = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 08897A6429DD941A0058A7A0;
+					};
 					08897A6429DD941A0058A7A0 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -267,11 +319,19 @@
 			projectRoot = "";
 			targets = (
 				08897A6429DD941A0058A7A0 /* Numberology */,
+				0830FA9029E9849F00C949BA /* NumberologyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0830FA8F29E9849F00C949BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08897A6329DD941A0058A7A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +368,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0830FA8D29E9849F00C949BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0830FA9429E9849F00C949BA /* NumberologyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08897A6129DD941A0058A7A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +413,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0830FA9629E9849F00C949BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08897A6429DD941A0058A7A0 /* Numberology */;
+			targetProxy = 0830FA9529E9849F00C949BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		08897A7329DD941B0058A7A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -357,6 +433,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0830FA9729E9849F00C949BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PF2GLF6PD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beavean.NumberologyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Numberology.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Numberology";
+			};
+			name = Debug;
+		};
+		0830FA9829E9849F00C949BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9PF2GLF6PD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Beavean.NumberologyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Numberology.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Numberology";
+			};
+			name = Release;
+		};
 		08897A7729DD941B0058A7A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -534,6 +648,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0830FA9929E9849F00C949BA /* Build configuration list for PBXNativeTarget "NumberologyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0830FA9729E9849F00C949BA /* Debug */,
+				0830FA9829E9849F00C949BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		08897A6029DD941A0058A7A0 /* Build configuration list for PBXProject "Numberology" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

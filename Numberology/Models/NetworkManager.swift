@@ -14,7 +14,7 @@ final class NetworkManager {
 
     // MARK: - Fetch methods
 
-    func fetchNumbersInfo(numbers: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
+    func fetchNumbersFacts(numbers: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
         let numbersString = numbers.map { String($0) }.joined(separator: ",")
         guard let url = generateUrl(forQuery: numbersString) else {
             completion(.failure(NetworkManagerError.invalidRequest))
@@ -29,7 +29,7 @@ final class NetworkManager {
         }
     }
 
-    func fetchNumbersInfoInRange(range: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
+    func fetchFactsForNumbersIn(range: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
         guard range.count == 2, let url = generateUrl(forQuery: "\(range[0])..\(range[1])") else {
             completion(.failure(NetworkManagerError.invalidRange))
             return
@@ -37,7 +37,7 @@ final class NetworkManager {
         fetchInfoForMultipleNumbers(url: url, completion: completion)
     }
 
-    func fetchRandomNumberWithFact(completion: @escaping (Result<[NumberFact], Error>) -> Void) {
+    func fetchFactForRandomNumber(completion: @escaping (Result<[NumberFact], Error>) -> Void) {
         let randomQuery = Constants.URLComponents.randomNumberWithFactQuery
         guard let url = generateUrl(forQuery: randomQuery) else {
             completion(.failure(NetworkManagerError.invalidRequest))
@@ -46,7 +46,7 @@ final class NetworkManager {
         fetchInfoForSingleNumber(url: url, number: nil, completion: completion)
     }
 
-    func fetchDate(fromArray array: [Int], completion: @escaping (Result<[DateFact], Error>) -> Void) {
+    func fetchDateFact(fromArray array: [Int], completion: @escaping (Result<[DateFact], Error>) -> Void) {
         guard array.count == 2, let url = generateUrl(forQuery: "\(array[0])/\(array[1])") else {
             completion(.failure(NetworkManagerError.invalidRequest))
             return
