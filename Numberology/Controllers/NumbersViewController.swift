@@ -21,16 +21,13 @@ final class NumbersViewController: UIViewController {
         label.textColor = .mainTextColor
         return label
     }()
-
     private let appDescriptionLabel: DefaultStyleLabel = {
         let label = DefaultStyleLabel(text: "This App about facts of Numbers and Dates", fontSize: 16, isBold: false)
         label.textAlignment = .center
         label.textColor = .mainTextColor
         return label
     }()
-
     private let dicesView = DicesView(mainColor: .mainFillColor, backgroundFillColor: .itemBackgroundColor)
-
     private let userNumberButton = OperationButton(title: "User number")
     private let randomNumberButton = OperationButton(title: "Random number")
     private let numberInRangeButton = OperationButton(title: "Range of numbers")
@@ -42,12 +39,7 @@ final class NumbersViewController: UIViewController {
         stackView.spacing = 8
         return stackView
     }()
-
-    private lazy var informationLabel: DefaultStyleLabel = {
-        let label = DefaultStyleLabel(text: numbersOption.labelTitle, fontSize: 14)
-        return label
-    }()
-
+    private lazy var informationLabel = DefaultStyleLabel(text: numbersOption.labelTitle, fontSize: 14)
     private let userNumberView = UserNumberView()
     private let randomNumberView = RandomNumberView()
     private let numberInRangeView = NumberInRangeView()
@@ -59,7 +51,6 @@ final class NumbersViewController: UIViewController {
         stackView.alignment = .fill
         return stackView
     }()
-
     private let displayFactButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .mainFillColor
@@ -259,7 +250,7 @@ final class NumbersViewController: UIViewController {
 
     // MARK: - Helpers
 
-    private func handleNetworkManagerResult(_ result: Result<[FactData], Error>,
+    private func handleNetworkManagerResult(_ result: Result<[NumberFact], Error>,
                                             rangeStart: Int? = nil,
                                             rangeEnd: Int? = nil) {
         DispatchQueue.main.async {

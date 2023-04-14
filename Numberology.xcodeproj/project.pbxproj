@@ -38,7 +38,7 @@
 		08BE8C6029E07DB900D3343D /* FactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C5F29E07DB900D3343D /* FactTableViewCell.swift */; };
 		08BE8C6229E080E500D3343D /* FactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C6129E080E500D3343D /* FactTableViewController.swift */; };
 		08BE8C6429E0C03300D3343D /* UIView+BlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BE8C6329E0C03300D3343D /* UIView+BlurLoader.swift */; };
-		08BF7D9929E6C35F0071B7DC /* FactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BF7D9829E6C35F0071B7DC /* FactData.swift */; };
+		08BF7D9929E6C35F0071B7DC /* NumberFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BF7D9829E6C35F0071B7DC /* NumberFact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +74,7 @@
 		08BE8C5F29E07DB900D3343D /* FactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewCell.swift; sourceTree = "<group>"; };
 		08BE8C6129E080E500D3343D /* FactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactTableViewController.swift; sourceTree = "<group>"; };
 		08BE8C6329E0C03300D3343D /* UIView+BlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+BlurLoader.swift"; sourceTree = "<group>"; };
-		08BF7D9829E6C35F0071B7DC /* FactData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactData.swift; sourceTree = "<group>"; };
+		08BF7D9829E6C35F0071B7DC /* NumberFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,7 @@
 			children = (
 				088D6D6529DDC72B0045C092 /* NumbersOption.swift */,
 				083E57C629E2211A007CBAE5 /* Month.swift */,
-				08BF7D9829E6C35F0071B7DC /* FactData.swift */,
+				08BF7D9829E6C35F0071B7DC /* NumberFact.swift */,
 				08BE8C5D29E0417800D3343D /* NetworkManager.swift */,
 			);
 			path = Models;
@@ -323,7 +323,7 @@
 				08BE8C5E29E0417800D3343D /* NetworkManager.swift in Sources */,
 				088D6D9029DE24AA0045C092 /* MultipleNumbersView.swift in Sources */,
 				083E57CA29E2D4C6007CBAE5 /* NetworkManagerError.swift in Sources */,
-				08BF7D9929E6C35F0071B7DC /* FactData.swift in Sources */,
+				08BF7D9929E6C35F0071B7DC /* NumberFact.swift in Sources */,
 				083E57C329E20E06007CBAE5 /* DateNumbersView.swift in Sources */,
 				083E57C729E2211B007CBAE5 /* Month.swift in Sources */,
 				08BE8C6029E07DB900D3343D /* FactTableViewCell.swift in Sources */,

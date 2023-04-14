@@ -1,5 +1,5 @@
 //
-//  FactData.swift
+//  NumberFact.swift
 //  Numberology
 //
 //  Created by Beavean on 12.04.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FactData {
+struct NumberFact {
     let number: String
     let fact: String
 }

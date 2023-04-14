@@ -11,7 +11,7 @@ import UIKit
 final class FactTableViewController: UITableViewController {
     // MARK: - Properties
 
-    private var data = [FactData]()
+    private var data = [NumberFact]()
     private var isFetchingMoreData = false
     private var currentEndNumber: Int?
     private var requestedRangeEndNumber: Int?
@@ -19,7 +19,7 @@ final class FactTableViewController: UITableViewController {
 
     // MARK: - Lifecycle
 
-    init(data: [FactData], rangeStartNumber: Int? = nil, rangeEndNumber: Int? = nil) {
+    init(data: [NumberFact], rangeStartNumber: Int? = nil, rangeEndNumber: Int? = nil) {
         super.init(nibName: nil, bundle: nil)
         self.data = data
         guard let rangeStartNumber, let rangeEndNumber else { return }
@@ -89,7 +89,7 @@ final class FactTableViewController: UITableViewController {
         }
     }
 
-    private func handleNetworkManagerResult(_ result: Result<[FactData], Error>) {
+    private func handleNetworkManagerResult(_ result: Result<[NumberFact], Error>) {
         DispatchQueue.main.async { [self] in
             switch result {
             case let .success(fetchedData):
@@ -127,7 +127,7 @@ final class FactTableViewController: UITableViewController {
 extension FactTableViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         guard let maxIndexPath = indexPaths.max(),
-              maxIndexPath.row >= (data.count / 2),
+              maxIndexPath.row >= data.count / 2,
               !isFetchingMoreData
         else { return }
         fetchMoreFacts()
