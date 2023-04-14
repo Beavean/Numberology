@@ -52,6 +52,9 @@ final class FactTableViewCell: UITableViewCell {
             $0.right.equalTo(titleLabel.snp.right)
             $0.bottom.equalToSuperview().inset(Constants.StyleDefaults.outerPadding)
         }
+
+        titleLabel.accessibilityIdentifier = "factTitleLabel"
+        descriptionLabel.accessibilityIdentifier = "descriptionLabel"
     }
 
     func configure(withNumber number: Int, fact: String) {

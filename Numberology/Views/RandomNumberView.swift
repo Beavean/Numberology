@@ -39,6 +39,7 @@ final class RandomNumberView: UIView {
             $0.height.equalTo(Constants.StyleDefaults.itemHeight)
             $0.left.right.top.equalToSuperview()
         }
+        randomNumberLabel.accessibilityIdentifier = "randomNumberLabel"
     }
 }
 

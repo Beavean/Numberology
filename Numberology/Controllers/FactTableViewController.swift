@@ -65,6 +65,7 @@ final class FactTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.prefetchDataSource = self
+        tableView.accessibilityIdentifier = "factTableView"
     }
 
     private func configureNavigationBar() {
@@ -82,6 +83,7 @@ final class FactTableViewController: UITableViewController {
                                          action: #selector(backButtonTapped))
         backButton.tintColor = .textOnFilledBackgroundColor
         navigationItem.rightBarButtonItem = backButton
+        navigationItem.rightBarButtonItem?.accessibilityIdentifier = "backButton"
     }
 
     // MARK: - Helpers

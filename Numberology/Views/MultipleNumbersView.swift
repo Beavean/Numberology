@@ -34,6 +34,7 @@ final class MultipleNumbersView: UIView {
             $0.height.equalTo(Constants.StyleDefaults.itemHeight)
             $0.left.right.top.equalToSuperview()
         }
+        numbersInputTextField.accessibilityIdentifier = "numbersInputTextField"
     }
 
     // MARK: - Helpers
