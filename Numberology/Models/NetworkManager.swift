@@ -8,10 +8,6 @@
 import Foundation
 
 final class NetworkManager {
-    // MARK: - Properties
-
-    private let dateDictionaryKey = "Picked Date Fact:"
-
     // MARK: - Fetch methods
 
     func fetchNumbersFacts(numbers: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {

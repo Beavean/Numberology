@@ -26,9 +26,9 @@ final class NetworkManagerTests: XCTestCase {
         var receivedFacts = [NumberFact]()
         sut.fetchNumbersFacts(numbers: [1337]) { result in
             switch result {
-            case .success(let facts):
+            case let .success(facts):
                 receivedFacts = facts
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Error fetching numbers info: \(error)")
             }
             expectation.fulfill()
@@ -47,9 +47,9 @@ final class NetworkManagerTests: XCTestCase {
         var receivedFacts = [NumberFact]()
         sut.fetchNumbersFacts(numbers: [1337, 999, 0, 1]) { result in
             switch result {
-            case .success(let facts):
+            case let .success(facts):
                 receivedFacts = facts
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Error fetching numbers info: \(error)")
             }
             expectation.fulfill()
@@ -69,9 +69,9 @@ final class NetworkManagerTests: XCTestCase {
         let range = [1337, 2000]
         sut.fetchFactsForNumbersIn(range: range) { result in
             switch result {
-            case .success(let facts):
+            case let .success(facts):
                 receivedFacts = facts
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Error fetching numbers info: \(error)")
             }
             expectation.fulfill()
@@ -90,9 +90,9 @@ final class NetworkManagerTests: XCTestCase {
         var receivedFacts = [NumberFact]()
         sut.fetchFactForRandomNumber { result in
             switch result {
-            case .success(let facts):
+            case let .success(facts):
                 receivedFacts = facts
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Error fetching numbers info: \(error)")
             }
             expectation.fulfill()
@@ -112,9 +112,9 @@ final class NetworkManagerTests: XCTestCase {
         let dateAsArray = [12, 31]
         sut.fetchDateFact(fromArray: dateAsArray) { result in
             switch result {
-            case .success(let facts):
+            case let .success(facts):
                 receivedFacts = facts
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Error fetching numbers info: \(error)")
             }
             expectation.fulfill()
