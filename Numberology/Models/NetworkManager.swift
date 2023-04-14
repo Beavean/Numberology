@@ -30,11 +30,21 @@ final class NetworkManager {
     }
 
     func fetchFactsForNumbersIn(range: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
-        guard range.count == 2, let url = generateUrl(forQuery: "\(range[0])..\(range[1])") else {
+        guard !range.isEmpty else {
             completion(.failure(NetworkManagerError.invalidRange))
             return
         }
-        fetchInfoForMultipleNumbers(url: url, completion: completion)
+        if range.count > 1, let url = generateUrl(forQuery: "\(range[0])..\(range[1])") {
+            fetchInfoForMultipleNumbers(url: url, completion: completion)
+        } else if range.count == 1 {
+            guard let url = generateUrl(forQuery: "\(range[0])") else {
+                completion(.failure(NetworkManagerError.invalidRange))
+                return
+            }
+            fetchInfoForSingleNumber(url: url,
+                                     number: range.first,
+                                     completion: completion)
+        }
     }
 
     func fetchFactForRandomNumber(completion: @escaping (Result<[NumberFact], Error>) -> Void) {

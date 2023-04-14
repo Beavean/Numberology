@@ -20,11 +20,12 @@ extension UIViewController {
     }
 
     func showError(_ error: Error?) {
-        if let error {
+        switch error {
+        case let networkManagerError as NetworkManagerError:
+            showInfoAlert(title: "Error", message: networkManagerError.stringDescription)
+        case let error?:
             showInfoAlert(title: "Error", message: error.localizedDescription)
-        } else if let networkManagerError = error as? NetworkManagerError {
-            showInfoAlert(title: "Error", message: networkManagerError.localizedDescription)
-        } else {
+        default:
             showInfoAlert(title: "Error", message: "Unknown error occurred.")
         }
     }
