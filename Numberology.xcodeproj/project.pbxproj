@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0830FA8C29E96FE500C949BA /* DateFact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FA8B29E96FE500C949BA /* DateFact.swift */; };
-		0830FA9429E9849F00C949BA /* NumberologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FA9329E9849F00C949BA /* NumberologyTests.swift */; };
+		0830FA9429E9849F00C949BA /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0830FA9329E9849F00C949BA /* NetworkManagerTests.swift */; };
 		083E57BD29E1BC1A007CBAE5 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BC29E1BC1A007CBAE5 /* Spacer.swift */; };
 		083E57BF29E1BDF0007CBAE5 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */; };
 		083E57C129E1C8FE007CBAE5 /* DicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083E57C029E1C8FE007CBAE5 /* DicesView.swift */; };
@@ -56,7 +56,7 @@
 /* Begin PBXFileReference section */
 		0830FA8B29E96FE500C949BA /* DateFact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFact.swift; sourceTree = "<group>"; };
 		0830FA9129E9849F00C949BA /* NumberologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberologyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0830FA9329E9849F00C949BA /* NumberologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberologyTests.swift; sourceTree = "<group>"; };
+		0830FA9329E9849F00C949BA /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		083E57BC29E1BC1A007CBAE5 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		083E57BE29E1BDF0007CBAE5 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		083E57C029E1C8FE007CBAE5 /* DicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicesView.swift; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		0830FA9229E9849F00C949BA /* NumberologyTests */ = {
 			isa = PBXGroup;
 			children = (
-				0830FA9329E9849F00C949BA /* NumberologyTests.swift */,
+				0830FA9329E9849F00C949BA /* NetworkManagerTests.swift */,
 			);
 			path = NumberologyTests;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0830FA9429E9849F00C949BA /* NumberologyTests.swift in Sources */,
+				0830FA9429E9849F00C949BA /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
