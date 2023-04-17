@@ -40,6 +40,10 @@ final class NumberologyUITests: XCTestCase {
     private lazy var endRangeTextField = app.textFields["endRangeTextField"]
     private lazy var numbersInputTextField = app.textFields["numbersInputTextField"]
 
+    // MARK: - Alert elements
+
+    private lazy var alertTitle = app.staticTexts["Incorrect input"]
+
     // MARK: - Fact Table View
 
     private lazy var factTableView = app.tables["factTableView"]
@@ -78,16 +82,18 @@ final class NumberologyUITests: XCTestCase {
         XCTAssertTrue(displayFactButton.exists)
     }
 
-    func testInputAlert() {
+    func testInputUserNumberAlert() {
         displayFactButton.tap()
-        let alertTitle = app.staticTexts["Incorrect input"]
-        let okButton = app.buttons["OK"]
         XCTAssertTrue(alertTitle.exists)
-        okButton.tap()
+    }
+
+    func testNumbersInRangeAlert() {
         numberInRangeButton.tap()
         displayFactButton.tap()
         XCTAssertTrue(alertTitle.exists)
-        okButton.tap()
+    }
+
+    func testMultipleNumbersAlert() {
         multipleNumbersButton.tap()
         displayFactButton.tap()
         XCTAssertTrue(alertTitle.exists)
@@ -159,6 +165,8 @@ final class NumberologyUITests: XCTestCase {
         backButton.tap()
         checkHiddenElements(switchedElement: dateNumbersView)
     }
+
+    // MARK: - Test helpers
 
     private func checkHiddenElements(switchedElement: XCUIElement) {
         XCTAssertTrue(switchedElement.exists)
