@@ -8,11 +8,14 @@
 import Foundation
 
 final class NetworkManager {
+    // MARK: - Properties
+
+    private let dateDictionaryKey = "Picked Date Fact:"
+
     // MARK: - Fetch methods
 
-    func fetchNumbersFacts(numbers: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
-        let numbersString = numbers.map { String($0) }.joined(separator: ",")
-        guard let url = generateUrl(forQuery: numbersString) else {
+    func fetchFactsFor(numbers: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
+        guard let url = createUrlQuery(forNumbers: numbers, withOption: .multipleNumbers) else {
             completion(.failure(NetworkManagerError.invalidRequest))
             return
         }
@@ -25,15 +28,11 @@ final class NetworkManager {
         }
     }
 
-    func fetchFactsForNumbersIn(range: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
-        guard !range.isEmpty else {
-            completion(.failure(NetworkManagerError.invalidRange))
-            return
-        }
-        if range.count > 1, let url = generateUrl(forQuery: "\(range[0])..\(range[1])") {
+    func fetchFactsForNumbers(inRange range: [Int], completion: @escaping (Result<[NumberFact], Error>) -> Void) {
+        if range.count > 1, let url = createUrlQuery(forNumbers: range, withOption: .numberInRange) {
             fetchInfoForMultipleNumbers(url: url, completion: completion)
         } else if range.count == 1 {
-            guard let url = generateUrl(forQuery: "\(range[0])") else {
+            guard let url = createUrlQuery(forNumbers: range, withOption: .userNumber) else {
                 completion(.failure(NetworkManagerError.invalidRange))
                 return
             }
@@ -44,8 +43,7 @@ final class NetworkManager {
     }
 
     func fetchFactForRandomNumber(completion: @escaping (Result<[NumberFact], Error>) -> Void) {
-        let randomQuery = Constants.URLComponents.randomNumberWithFactQuery
-        guard let url = generateUrl(forQuery: randomQuery) else {
+        guard let url = createUrlQuery(withOption: .randomNumber) else {
             completion(.failure(NetworkManagerError.invalidRequest))
             return
         }
@@ -53,7 +51,7 @@ final class NetworkManager {
     }
 
     func fetchDateFact(fromArray array: [Int], completion: @escaping (Result<[DateFact], Error>) -> Void) {
-        guard array.count == 2, let url = generateUrl(forQuery: "\(array[0])/\(array[1])") else {
+        guard let url = createUrlQuery(forNumbers: array, withOption: .dateNumbers) else {
             completion(.failure(NetworkManagerError.invalidRequest))
             return
         }
@@ -61,6 +59,27 @@ final class NetworkManager {
     }
 
     // MARK: - Helpers
+
+    private func createUrlQuery(forNumbers array: [Int] = [], withOption option: NumbersOption) -> URL? {
+        let query: String
+        switch option {
+        case .randomNumber:
+            query = Constants.URLComponents.randomNumberWithFactQuery
+        case .numberInRange:
+            guard array.count == 2 else { return nil }
+            query = "\(array[0])..\(array[1])"
+        case .userNumber, .multipleNumbers:
+            if array.count > 1 {
+                query =  array.map { String($0) }.joined(separator: ",")
+            } else {
+                query = "\(array[0])"
+            }
+        case .dateNumbers:
+            guard array.count == 2 else { return nil }
+            query = "\(array[0])/\(array[1])"
+        }
+        return generateUrl(forQuery: query)
+    }
 
     private func generateUrl(forQuery query: String) -> URL? {
         var components = URLComponents()

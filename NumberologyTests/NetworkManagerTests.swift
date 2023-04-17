@@ -10,6 +10,7 @@ import XCTest
 
 final class NetworkManagerTests: XCTestCase {
     private var sut: NetworkManager!
+    private let timeout: TimeInterval = 2
 
     override func setUp() {
         super.setUp()
@@ -24,7 +25,7 @@ final class NetworkManagerTests: XCTestCase {
     func testSingleNumberFactFetch() {
         let expectation = expectation(description: #function)
         var receivedFacts = [NumberFact]()
-        sut.fetchNumbersFacts(numbers: [1337]) { result in
+        sut.fetchFactsFor(numbers: [1337]) { result in
             switch result {
             case let .success(facts):
                 receivedFacts = facts
@@ -33,7 +34,7 @@ final class NetworkManagerTests: XCTestCase {
             }
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 3) { error in
+        waitForExpectations(timeout: timeout) { error in
             if error != nil {
                 XCTFail("Expectation timeout error")
             } else {
@@ -45,7 +46,7 @@ final class NetworkManagerTests: XCTestCase {
     func testMultipleNumberFactsFetch() {
         let expectation = expectation(description: #function)
         var receivedFacts = [NumberFact]()
-        sut.fetchNumbersFacts(numbers: [1337, 999, 0, 1]) { result in
+        sut.fetchFactsFor(numbers: [1337, 999, 0, 1]) { result in
             switch result {
             case let .success(facts):
                 receivedFacts = facts
@@ -54,7 +55,7 @@ final class NetworkManagerTests: XCTestCase {
             }
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 3) { error in
+        waitForExpectations(timeout: timeout) { error in
             if error != nil {
                 XCTFail("Expectation timeout error")
             } else {
@@ -67,7 +68,7 @@ final class NetworkManagerTests: XCTestCase {
         let expectation = expectation(description: #function)
         var receivedFacts = [NumberFact]()
         let range = [1337, 2000]
-        sut.fetchFactsForNumbersIn(range: range) { result in
+        sut.fetchFactsForNumbers(inRange: range) { result in
             switch result {
             case let .success(facts):
                 receivedFacts = facts
@@ -76,7 +77,7 @@ final class NetworkManagerTests: XCTestCase {
             }
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 3) { error in
+        waitForExpectations(timeout: timeout) { error in
             if error != nil {
                 XCTFail("Expectation timeout error")
             } else {
@@ -97,7 +98,7 @@ final class NetworkManagerTests: XCTestCase {
             }
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 3) { error in
+        waitForExpectations(timeout: timeout) { error in
             if error != nil {
                 XCTFail("Expectation timeout error")
             } else {
@@ -119,7 +120,7 @@ final class NetworkManagerTests: XCTestCase {
             }
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 3) { error in
+        waitForExpectations(timeout: timeout) { error in
             if error != nil {
                 XCTFail("Expectation timeout error")
             } else {

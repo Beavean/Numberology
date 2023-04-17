@@ -94,7 +94,7 @@ final class FactTableViewController: UITableViewController {
               currentEndNumber < requestedRangeEndNumber else { return }
         isFetchingMoreData = true
         let range = [currentEndNumber, requestedRangeEndNumber]
-        networkManager.fetchFactsForNumbersIn(range: range) { [weak self] result in
+        networkManager.fetchFactsForNumbers(inRange: range) { [weak self] result in
             self?.handleNetworkManagerResult(result)
         }
     }

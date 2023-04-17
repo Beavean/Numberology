@@ -126,7 +126,7 @@ final class NumbersViewController: UIViewController {
         displayFactButton.showBlurLoader()
         switch numbersOption {
         case .userNumber, .multipleNumbers:
-            networkManager.fetchNumbersFacts(numbers: numberInputContainer.numbers) { [weak self] result in
+            networkManager.fetchFactsFor(numbers: numberInputContainer.numbers) { [weak self] result in
                 self?.handleNetworkManagerResult(result)
             }
         case .randomNumber:
@@ -135,7 +135,7 @@ final class NumbersViewController: UIViewController {
             }
         case .numberInRange:
             let rangeNumbers = numberInputContainer.numbers
-            networkManager.fetchFactsForNumbersIn(range: numberInputContainer.numbers) { [weak self] result in
+            networkManager.fetchFactsForNumbers(inRange: numberInputContainer.numbers) { [weak self] result in
                 self?.handleNetworkManagerResult(result, rangeStart: rangeNumbers.first, rangeEnd: rangeNumbers.last)
             }
         case .dateNumbers:
