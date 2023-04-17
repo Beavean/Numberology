@@ -12,7 +12,7 @@ enum NetworkManagerError: Error {
     case invalidRequest
     case invalidRange
 
-    var localizedDescription: String {
+    var stringDescription: String {
         switch self {
         case .noData:
             return "No data received from server"

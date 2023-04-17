@@ -54,6 +54,9 @@ final class NumberInRangeView: UIView {
         leftSpacer.snp.makeConstraints {
             $0.width.equalTo(rightSpacer)
         }
+        startRangeTextField.accessibilityIdentifier = "startRangeTextField"
+        separatorLabel.accessibilityIdentifier = "separatorLabel"
+        endRangeTextField.accessibilityIdentifier = "endRangeTextField"
     }
 
     // MARK: - Helpers
