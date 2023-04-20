@@ -17,6 +17,8 @@ Stack:
 - Auto Layout
 - Code-only layout
 - MVC
+- Unit tests
+- UI tests
 
 
 Third-party libraries:
