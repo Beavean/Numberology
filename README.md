@@ -20,9 +20,12 @@ Stack:
 - Unit tests
 - UI tests
 
-
 Third-party libraries:
 - SnapKit (SPM)
 
-![Simulator Screen Recording - iPhone SE (3rd generation) - 2023-04-14 at 15 22 54](https://user-images.githubusercontent.com/105853157/232042400-57d933d8-4557-48d4-8d8e-4f456ebbd645.gif)
-![Simulator Screen Recording - iPhone 14 - 2023-04-14 at 15 13 49](https://user-images.githubusercontent.com/105853157/232040665-a15076a8-94cd-4e4e-a78a-8be50a854ddb.gif)
+Screen recording snippets:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/105853157/232042400-57d933d8-4557-48d4-8d8e-4f456ebbd645.gif" alt="Simulator Screen Recording - iPhone SE (3rd generation)">
+  <img src="https://user-images.githubusercontent.com/105853157/232040665-a15076a8-94cd-4e4e-a78a-8be50a854ddb.gif" alt="Simulator Screen Recording - iPhone
+14"> 
+</p>
